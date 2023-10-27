@@ -1,0 +1,83 @@
+.start-page section.about {
+    background-color: #ffffff;
+  }
+  .start-page section.about .container .row {
+    gap: 5rem;
+  }
+  .start-page section.about .container .row .left {
+    position: relative;
+  }
+  .start-page section.about .container .row .left .image-wrapper .image {
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+    padding-left: 3rem;
+  }
+  .start-page section.about .container .row .left .image-wrapper .lines {
+    padding-left: 3rem;
+    width: 45%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+  }
+  .start-page section.about .container .row .left .box {
+    width: 60%;
+    padding: 2rem;
+    background-color: lightblue;
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+    box-shadow: -5px 10px 100px 10px #dad9d3;
+  }
+  .start-page section.about .container .row .left .box p:first-of-type {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .start-page section.about .container .row .left .box p:first-of-type span {
+    font-size: 1rem;
+  }
+  .start-page section.about .container .row .right {
+    padding: 1rem;
+  }
+  .start-page section.about .container .row .right h2 {
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  .start-page section.about .container .row .right .btngroup {
+    gap: 3rem;
+  }
+
+/* MEDIA QUERIES */
+/* SECTION ABOUT 992 */
+@media (max-width: 992px) {
+  .start-page section.about .container .row {
+    flex-wrap: wrap-reverse;
+  }
+  .start-page section.about .container .row .right .text {
+    margin: 1rem 0;
+  }
+  .start-page section.about .container .row .left {
+    padding: 0;
+  }
+  .start-page section.about .container .row .left .image-wrapper .image, .start-page section.about .container .row .left .image-wrapper .lines {
+    padding-left: 0;
+  }
+  .start-page section.about .container .row .left .image-wrapper .lines {
+    width: 33%;
+  }
+  .start-page section.about .container .row .left .box {
+    width: 100%;
+    bottom: 0;
+    box-shadow: none;
+  }
+}
+
+/* SECTION ABOUT 576 */
+@media (max-width: 576px) {
+  .start-page section.about .container {
+    padding: 0;
+  }
+  .start-page section.about .container .row .right {
+    padding: 0 2rem;
+  }
+}

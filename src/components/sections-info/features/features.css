@@ -1,0 +1,48 @@
+.start-page section.features {
+    background-color: #ffffff;
+  }
+  .start-page section.features .container .box {
+    border: 3px solid #f0efe9;
+    padding: 5rem;
+    gap: 5rem;
+  }
+  .start-page section.features .container .box .col .left .btn {
+    width: 100%;
+    margin-top: 3rem;
+  }
+  .start-page section.features .container .box .col .grid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: auto auto;
+    gap: 2rem 5rem;
+  }
+  .start-page section.features .container .box .col .grid div h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem 0;
+  }
+
+/* MEDIA QUERIES */
+/* SECTION FEATURES 768 */
+@media (max-width: 768px) {
+  .start-page section.features .container .box {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .start-page section.features .container .box .col .grid {
+    grid-template-columns: 45% 45%;
+    grid-template-rows: auto;
+    gap: 2rem;
+  }
+}
+
+/* SECTION FEATURES 576 */
+@media (max-width: 576px) {
+  .start-page section.features .container .box {
+    padding: 3rem;
+  }
+  .start-page section.features .container .box .col .grid {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: 2rem 0;
+  }
+}

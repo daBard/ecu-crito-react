@@ -1,0 +1,94 @@
+.start-page section.newsletter {
+    position: relative;
+  }
+  .start-page section.newsletter .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .start-page section.newsletter .container form, .start-page section.newsletter .container fieldset {
+    width: 100%;
+  }
+  .start-page section.newsletter .container form fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .start-page section.newsletter .container form fieldset legend {
+    flex: 7;
+  }
+  .start-page section.newsletter .container form fieldset legend h2 {
+    margin: 0;
+  }
+  .start-page section.newsletter .container form fieldset .group {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+    flex: 5;
+  }
+  .start-page section.newsletter .container form fieldset .group label {
+    flex-grow: 1;
+    max-width: 20rem;
+  }
+  .start-page section.newsletter .container form fieldset .group label #email {
+    width: 100%;
+  }
+  .start-page section.newsletter img {
+    position: absolute;
+    right: 0;
+  }
+
+/* MEDIA QUERIES */
+/* SECTION NEWSLETTER 1520 */
+@media (max-width: 1520px) {
+    .start-page section.newsletter .container {
+        flex-direction: column;
+        align-items: start;
+        gap: 3rem;
+    }
+    .start-page section.newsletter .container form fieldset {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: start;
+    }
+    .start-page section.newsletter .container form fieldset .group {
+        justify-content: start;
+        flex: auto;
+        width: 100%;
+    }
+}
+
+/* SECTION NEWSLETTER 768 */
+@media (max-width: 768px) {
+  .start-page section.newsletter .container form fieldset .group {
+    flex-direction: column;
+    align-items: start;
+    width: 50dvw;
+    gap: 1.5rem;
+  }
+  .start-page section.newsletter .container form fieldset .group label, .start-page section.newsletter .container form fieldset .group input, .start-page section.newsletter .container form fieldset .group button {
+    width: 100%;
+    max-width: 100%;
+  }
+  .start-page section.newsletter img {
+    bottom: 33%;
+  }
+}
+
+/* SECTION NEWSLETTER 576 */
+@media (max-width: 576px) {
+.start-page section.newsletter .container {
+        gap: 2rem 0;
+    }
+    .start-page section.newsletter .container form fieldset .group {
+        width: 100%;
+    }
+    .start-page section.newsletter .container form fieldset .group label input {
+        padding: 1rem 2rem;
+        position: relative;
+        z-index: 5;
+    }
+    .start-page section.newsletter .container form fieldset .group label .icon {
+       z-index: 10;
+    }
+}

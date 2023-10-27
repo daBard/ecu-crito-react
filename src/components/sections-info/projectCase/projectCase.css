@@ -1,0 +1,85 @@
+.start-page section.project-case {
+    background-color: #ffffff;
+  }
+  .start-page section.project-case .objects {
+    width: 100%;
+    margin: 5rem 0;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: calc(50% - 1.5rem) calc(50% - 1.5rem);
+    grid-template-rows: calc(500px - 1.5rem) calc(500px - 1.5rem);
+  }
+  .start-page section.project-case .objects a.object {
+    color: #191919 !important;
+    height: 500px;
+    width: 100%;
+  }
+  .start-page section.project-case .objects a.object *, .start-page section.project-case .objects a.object > * {
+    transition: all 0.4s ease-in-out;
+  }
+  .start-page section.project-case .objects a.object img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+  }
+  .start-page section.project-case .objects a.object h3 {
+    align-self: start;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dad9d3;
+    text-transform: none;
+  }
+  .start-page section.project-case .objects a.object .text {
+    width: 100%;
+    height: 0px;
+    display: block;
+    overflow: hidden;
+  }
+  .start-page section.project-case .objects a.object .btngroup {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: end;
+  }
+  .start-page section.project-case .objects a.object .btngroup .btn {
+    border: none;
+    padding: 0;
+  }
+  .start-page section.project-case .objects a.object:hover h3 {
+    margin-top: 1rem;
+  }
+  .start-page section.project-case .objects a.object:hover img {
+    height: 0px;
+    display: block;
+  }
+  .start-page section.project-case .objects a.object:hover .text {
+    height: 350px;
+  }
+  .start-page section.project-case .objects a.object:hover .btngroup .btn:hover, .start-page section.project-case .objects a.object:hover .btngroup .btn:focus {
+    background-color: transparent;
+    color: #191919;
+    border: none;
+  }
+
+/* MEDIA QUERIES */
+/* SECTION PROJECTS 992 */
+@media (max-width: 992px) {
+  .start-page section.project-case .highlight, .start-page section.project-case h2 {
+    align-self: start;
+  }
+  .start-page section.project-case .objects {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: 1rem 0;
+    margin: 1rem 0;
+  }
+  .start-page section.project-case .objects a.object:hover h3, .start-page section.project-case .objects a.object:hover .btngroup .btn {
+    text-decoration: underline;
+  }
+  .start-page section.project-case .objects a.object:hover img {
+    height: 350px;
+  }
+  .start-page section.project-case .objects a.object:hover .text {
+    height: 0px;
+  }
+}

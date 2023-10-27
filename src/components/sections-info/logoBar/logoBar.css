@@ -1,0 +1,29 @@
+.start-page section.logo-bar {
+    background-color: #ffffff;
+  }
+  .start-page section.logo-bar .logos {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .start-page section.logo-bar .logos a {
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  .start-page section.logo-bar .logos a img {
+    mix-blend-mode: multiply;
+  }
+  .start-page section.logo-bar .logos a:hover, .start-page section.logo-bar .logos a:focus {
+    scale: 1.2;
+    background-color: transparent;
+  }
+  .start-page section.logo-bar .logos a:hover img, .start-page section.logo-bar .logos a:focus img {
+    mix-blend-mode: multiply;
+  }
+
+  /* MEDIA QUERIES */
+  /* SECTION LOGO-BAR 768 */
+  @media (max-width: 768px) {
+    .start-page section.logo-bar .container .logos {
+      flex-wrap: nowrap;
+    }
+  }
