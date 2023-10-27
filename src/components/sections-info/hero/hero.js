@@ -2,6 +2,7 @@ import React from 'react'
 import bgLines from '../../../assets/img/background-lines.svg'
 import showcaseImg from '../../../assets/img/showcase-image.svg'
 import './hero.css'
+import Button from '../../utilities/button/button'
 
 const hero = () => {
   return (
@@ -14,8 +15,8 @@ const hero = () => {
                             <p className="lead">Establish your vision and value proposition and turn them into testable prototypes.</p>
                         </div>
                         <div className="btngroup">
-                            <button className="btn btn-c">Get Consulting</button>
-                            <button className="btn btn-bg">Learn More</button>
+                            <Button btn="true" color="color" id="" title="Get Consulting" />
+                            <Button btn="false" color="bg" id="" title="Learn more" />
                         </div>
                     </div>
                     <div className="right">

@@ -3,6 +3,7 @@ import linkedinSalesSolutions from '../../../assets/img/linkedin-sales-solutions
 import emilianoVittoriosi from '../../../assets/img/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg'
 import kobuAgency from '../../../assets/img/kobu-agency-ipARHaxETRk-unsplash.jpg'
 import './articlesNews.css'
+import Button from '../../utilities/button/button'
 
 const articlesNews = () => {
   return (
@@ -14,7 +15,7 @@ const articlesNews = () => {
                             <h2 className="display-3">Get every single article & news</h2>
                         </div>
                         <div className="btngroup">
-                            <button className="btn btn-w">Browse articles</button>
+                            <Button btn="true" color="white" title="Browse articles" />
                         </div>
                     </div>
                     <div className="cards d-flex">

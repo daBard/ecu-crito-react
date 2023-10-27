@@ -1,6 +1,7 @@
 import React from 'react'
 import backgroundLinesRight from '../../../assets/img/background-lines-right.svg'
 import './service.css'
+import Button from '../../utilities/button/button'
 
 const service = () => {
   return (
@@ -35,7 +36,7 @@ const service = () => {
                 </a>
             </div>
             <div className="btngroup d-flex justify-content-center">
-                <button className="btn btn-bg">Browse services</button>
+                <Button color="bg" id="" title="Browse services" />
             </div>
         </div>
         <img src={backgroundLinesRight} alt="" className="lines" loading="lazy" />

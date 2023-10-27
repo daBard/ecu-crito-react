@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../assets/img/logotype.svg'
 import './header-footer.css'
+import Button from '../utilities/button/button'
 
 
 const header = () => {
@@ -60,7 +61,7 @@ const header = () => {
                             </div>
                             
                             <div className="login d-flex">
-                                    <button type="button" id="login-btn" className="btn btn-c">Login</button>
+                                <Button btn="true" color="color" id="login-btn" title="Login" />
                             </div>
 
                             <div className="line"></div>

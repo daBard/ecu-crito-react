@@ -3,6 +3,7 @@ import cassandraWarren from '../../../assets/img/vince-veras-AJIqZDAUD7A-unsplas
 import amandaTulling from '../../../assets/img/christina-wocintechchat-com-PlikkWB79qs-unsplash.jpg'
 import jackMcDogglas from '../../../assets/img/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg'
 import './testimonials.css'
+import Button from '../../utilities/button/button'
 
 const testimonials = () => {
   return (
@@ -46,7 +47,8 @@ const testimonials = () => {
                 </div>
             </div>
             <div className="btngroup">
-                <button className="btn btn-b">All reviews</button>
+            
+                <Button btn="true" color="black" title="All reviews" />
             </div>
         </div>
     </section>

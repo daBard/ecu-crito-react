@@ -6,6 +6,8 @@ import square from '../../../assets/img/square.svg'
 import gobona from '../../../assets/img/gobona.svg'
 import './logoBar.css'
 
+import Button from '../../utilities/button/button'
+
 const logoBar = () => {
   return (
     <section className="logo-bar w-100 m-small">

@@ -1,8 +1,7 @@
 /* IMPORT */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap");
-/* VARIABLES */
-/* MIXINS */
+
 /* GLOBAL */
 :root {
   font-size: 16px;
@@ -10,9 +9,6 @@
 
 html, body, main {
   background-color: #ffffff;
-  /* &, header, footer {
-      width: 100dvw;
-  }*/
   z-index: -99;
 }
 html > *, body > *, main > * {
@@ -20,12 +16,8 @@ html > *, body > *, main > * {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-header, nav, main {
+nav, main {
   background-color: #f0efe9;
-}
-
-footer {
-  background-color: #191919;
 }
 
 section {
@@ -68,62 +60,6 @@ a {
 
 /* COMPONENTS */
 /* Buttons */
-.btn {
-  padding: 1rem 2rem;
-  border-radius: 25px;
-  cursor: pointer;
-  border: 1px solid transparent;
-  z-index: 1;
-  font-weight: 700;
-  text-transform: capitalize;
-}
-.btn.btn-w, .btn.btn-c, .btn.btn-b {
-  transition: all 0.3s ease-in-out;
-}
-.btn.btn-w {
-  background-color: #ffffff;
-  border-color: #191919;
-}
-.btn.btn-w:hover, .btn.btn-w:focus {
-  background-color: #191919;
-  color: #ffffff;
-}
-.btn.btn-bg {
-  background-color: #f0efe9;
-  border-color: #191919;
-}
-.btn.btn-bg:hover, .btn.btn-bg:focus {
-  background-color: #191919;
-  color: #ffffff;
-}
-.btn.btn-c {
-  background-color: #f9d783;
-  border-color: #f9d783;
-}
-.btn.btn-c:hover, .btn.btn-c:focus {
-  background-color: #191919;
-  border-color: #191919;
-  color: #ffffff;
-}
-.btn.btn-b {
-  background-color: #191919;
-  border-color: #191919;
-  color: #f0efe9;
-}
-.btn.btn-b:hover, .btn.btn-b:focus {
-  background-color: transparent;
-  color: #191919;
-}
-.btn::after {
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 900;
-  margin-left: 0.5rem;
-  font: var(--fa-font-solid);
-  content: "\e09f";
-}
-
 .btn-round {
   gap: 1rem;
   font-weight: 700;
@@ -276,20 +212,30 @@ form fieldset label .icon.top {
     scale: 1;
   }
 }
+
+/* GLOBAL 1520 */
 @media (max-width: 1520px) {
-  /* GLOBAL */
   .container {
     padding: 0 3rem;
   }
 }
+
+/* GLOBAL 992 */
 @media (max-width: 992px) {
-  /* GLOBAL */
   section:first-of-type {
     padding-top: 3rem;
   }
 }
+
+@media (max-width: 768px) {
+  /* GLOBAL 768 */
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* GLOBAL 576*/
 @media (max-width: 576px) {
-  /* GLOBAL 576*/
   :root {
     font-size: 14px;
   }

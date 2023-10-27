@@ -4,6 +4,7 @@ import marekLevak from '../../../assets/img/marek-levak-zANXcXyByos-unsplash.jpg
 import oliDale from '../../../assets/img/oli-dale-xjSkI_seiZY-unsplash.jpg'
 import carlosMuza from '../../../assets/img/carlos-muza-hpjSkU2UYSU-unsplash.jpg'
 import './projectCase.css'
+import Button from '../../utilities/button/button'
 
 const projectCase = () => {
   return (
@@ -58,7 +59,7 @@ const projectCase = () => {
                 </a>
             </div>
             <div className="btngroup">
-                <button className="btn btn-b">All recent projects</button>
+                <Button btn="true" color="black" title="All recent projects" />
             </div>
         </div>
     </section>

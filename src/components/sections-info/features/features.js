@@ -1,5 +1,6 @@
 import React from 'react'
 import './features.css'
+import Button from '../../utilities/button/button'
 
 const features = () => {
   return (
@@ -10,7 +11,7 @@ const features = () => {
                     <div className="left">
                         <p className="highlight">Features</p>
                         <h2 className="heading display-4">Our Accounting is trusted by thousands of companies</h2>
-                        <button className="btn btn-c">Learn More</button>
+                        <Button btn="false" color="color" id="" title="Learn more" />
                     </div>
                 </div>
                 <div className="col">

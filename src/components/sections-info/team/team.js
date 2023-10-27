@@ -4,6 +4,7 @@ import markAubri from '../../../assets/img/itay-verchik-6ZKGBzrDd3I-unsplash.jpg
 import kimberlyHansen from '../../../assets/img/christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg'
 import justinWilloman from '../../../assets/img/the-connected-narrative-N8lRH2uxih4-unsplash.jpg'
 import './team.css'
+import Button from '../../utilities/button/button'
 
 const team = () => {
   return (
@@ -15,7 +16,7 @@ const team = () => {
                             <h2 className="display-3">Experience team members</h2>
                         </div>
                         <div className="btngroup">
-                            <button className="btn btn-c">Browse team</button>
+                            <Button btn="true" color="color" id="" title="Browse team" />
                         </div>
                     </div>
                     <div className="cards d-flex">

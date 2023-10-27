@@ -2,6 +2,7 @@ import React from 'react'
 import dariaPimkina from '../../../assets/img/daria-pimkina-tYaccl19A3Q-unsplash.jpg'
 import bgWavyLines from '../../../assets/img/background-wavy-lines2.svg'
 import './about.css'
+import Button from '../../utilities/button/button'
 
 const about = () => {
   return (
@@ -26,7 +27,7 @@ const about = () => {
                         <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis esse quis incidunt adipisci accusantium libero provident voluptate amet.</p>
                     </div>
                     <div className="btngroup d-flex">
-                        <button className="btn btn-b">Learn More</button>
+                        <Button color="black" id="" title="Learn more" />
                         <div className="btn-round d-flex align-items-center">
                             <div className="play-arrow"><i className="fa-sharp fa-solid fa-play"></i></div>
                             <div>Intro Video</div>
