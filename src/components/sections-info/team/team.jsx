@@ -5,7 +5,6 @@ import kristinePalmer from '../../../assets/img/christina-wocintechchat-com-SJvD
 import markAubri from '../../../assets/img/itay-verchik-6ZKGBzrDd3I-unsplash.jpg'
 import kimberlyHansen from '../../../assets/img/christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg'
 import justinWilloman from '../../../assets/img/the-connected-narrative-N8lRH2uxih4-unsplash.jpg'
-//import './team.css'
 
 const team = () => {
   return (

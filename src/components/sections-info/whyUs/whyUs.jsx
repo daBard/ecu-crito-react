@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import amyHirshi from '../../../assets/img/amy-hirschi-K0c8ko3e6AA-unsplash.jpg'
-//import './whyUs.css'
 
 const whyUs = () => {
   return (

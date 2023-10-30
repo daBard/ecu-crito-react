@@ -1,5 +1,4 @@
 import React from 'react'
-// import './button.css'
 
 const button = ({type, form, value, id, color, title}) => {
 

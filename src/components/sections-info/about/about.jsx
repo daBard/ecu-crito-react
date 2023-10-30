@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import dariaPimkina from '../../../assets/img/daria-pimkina-tYaccl19A3Q-unsplash.jpg'
 import bgWavyLines from '../../../assets/img/background-wavy-lines2.svg'
-// import './about.css'
 
 const about = () => {
   return (

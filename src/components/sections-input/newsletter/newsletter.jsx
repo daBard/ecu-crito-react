@@ -1,6 +1,5 @@
 import React from 'react'
 import backgroundWavyLines from '../../../assets/img/background-wavy-lines.svg'
-//import './newsletter.css'
 import Button from '../../utilities/button/button'
 
 const newsletter = () => {

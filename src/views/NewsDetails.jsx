@@ -3,16 +3,17 @@ import React from 'react'
 import Header from '../components/header-footer/header'
 import Footer from '../components/header-footer/footer'
 
-const News = () => {
+const NewsDetails = () => {
   return (
+
     <>
     <Header />
-    <main className="w-100 news-page">
-        <div>News</div>
+    <main className="w-100">
+      <div>NewsDetails</div>
     </main>
     <Footer />
     </>
   )
 }
 
-export default News
+export default NewsDetails

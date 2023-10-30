@@ -5,7 +5,6 @@ import adeoluEletu from '../../../assets/img/adeolu-eletu-E7RLgUjjazc-unsplash.j
 import marekLevak from '../../../assets/img/marek-levak-zANXcXyByos-unsplash.jpg'
 import oliDale from '../../../assets/img/oli-dale-xjSkI_seiZY-unsplash.jpg'
 import carlosMuza from '../../../assets/img/carlos-muza-hpjSkU2UYSU-unsplash.jpg'
-//import './projectCase.css'
 
 const projectCase = () => {
   return (

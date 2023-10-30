@@ -11,7 +11,7 @@ const NotFound = () => {
   return (
     <>
     <Header />
-    <div style={divStyle}>
+    <div className="w-100" style={divStyle}>
         <h1>Oops... this page does not exist.</h1>
         <p>Error - 404 Page Not Found</p>
     </div>

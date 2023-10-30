@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-//import './features.css'
-
 const features = () => {
   return (
     <section className="features w-100 m-none">

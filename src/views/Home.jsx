@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className="w-100 start-page">
+      <main className="w-100">
         <Hero />
         <LogoBar />
         <Features />

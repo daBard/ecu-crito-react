@@ -1,10 +1,9 @@
 import React from 'react'
-//import './contactForm.css'
 import Button from '../../utilities/button/button'
 
 const contactForm = () => {
   return (
-    <section className="form w-100 m-small">
+    <section className="contact-form w-100 m-small">
         <div className="container">
             <form action="" id="contact-form">
                 <fieldset>

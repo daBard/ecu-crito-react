@@ -13,7 +13,7 @@ const Contact = () => {
   return (
     <>
     <Header />
-    <main className="w-100 contact-page">
+    <main className="w-100">
         <Hero />
         <Info />
         <Form />

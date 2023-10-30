@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import backgroundLinesRight from '../../../assets/img/background-lines-right.svg'
-//import './service.css'
 
 const service = () => {
   return (

@@ -1,14 +1,14 @@
-.contact-page section.hero {
+section.contact-hero {
   position: relative;
 }
-.contact-page section.hero img.bg-lines {
+section.contact-hero img.bg-lines {
   max-width: 40dvw;
   padding: 0;
   position: absolute;
   bottom: 0;
   left: 0;
 }
-.contact-page section.hero .container {
+section.contact-hero .container {
   justify-content: center;
   align-items: flex-start;
 }

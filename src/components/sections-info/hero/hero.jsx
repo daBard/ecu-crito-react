@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import bgLines from '../../../assets/img/background-lines.svg'
 import showcaseImg from '../../../assets/img/showcase-image.svg'
-//import './hero.css'
 
 const hero = () => {
   return (

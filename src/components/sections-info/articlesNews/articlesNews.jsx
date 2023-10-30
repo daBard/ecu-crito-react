@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import linkedinSalesSolutions from '../../../assets/img/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg'
 import emilianoVittoriosi from '../../../assets/img/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg'
 import kobuAgency from '../../../assets/img/kobu-agency-ipARHaxETRk-unsplash.jpg'
-//import './articlesNews.css'
 
 const apiUrl = "https://win23-assignment.azurewebsites.net/api"
 

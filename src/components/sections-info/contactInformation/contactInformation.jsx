@@ -1,9 +1,8 @@
 import React from 'react'
-//import './contactInformation.css'
 
 const contactInformation = () => {
   return (
-    <section className="information w-100">
+    <section className="contact-information w-100">
         <div className="container">
             <div className="boxes">
                 <div className="box">
