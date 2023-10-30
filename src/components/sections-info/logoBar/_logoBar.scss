@@ -28,7 +28,7 @@ section.logo-bar {
 /* MEDIA QUERIES */
 @media (max-width: 768px) { 
     /* SECTION LOGO-BAR 768 */
-    .start-page section.logo-bar .container {
+     section.logo-bar .container {
         .logos {
             flex-wrap: nowrap;
         }

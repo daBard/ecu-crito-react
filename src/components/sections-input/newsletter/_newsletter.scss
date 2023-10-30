@@ -51,7 +51,7 @@ section.newsletter {
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
     /* SECTION NEWSLETTER 1520 */
-    .start-page section.newsletter .container {
+     section.newsletter .container {
         flex-direction: column;
         align-items: start;
         gap: 3rem;
@@ -72,7 +72,7 @@ section.newsletter {
  
 @media (max-width: 768px) { 
     /* SECTION NEWSLETTER 768 */
-    .start-page section.newsletter {
+     section.newsletter {
         .container {
             form fieldset {
                 .group {
@@ -96,7 +96,7 @@ section.newsletter {
 
 @media (max-width: 576px) {
      /* SECTION NEWSLETTER 576 */
-     .start-page section.newsletter .container {
+      section.newsletter .container {
         gap: 2rem 0;
 
         form fieldset{

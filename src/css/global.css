@@ -62,14 +62,11 @@
   font-size: 16px;
 }
 
-html, body, main {
+html, body, #root, main {
   background-color: #ffffff;
-  /* &, header, footer {
-      width: 100dvw;
-  }*/
-  z-index: -99;
+  max-width: 100dvw;
 }
-html > *, body > *, main > * {
+html > *, body > *, #root > *, main > * {
   color: #191919;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -741,22 +738,22 @@ section.about .container .row .right .btngroup a.btn-round {
 
 @media (max-width: 992px) {
   /* SECTION ABOUT 992 */
-  .start-page section.about .container .row {
+  section.about .container .row {
     flex-wrap: wrap-reverse;
   }
-  .start-page section.about .container .row .right .text {
+  section.about .container .row .right .text {
     margin: 1rem 0;
   }
-  .start-page section.about .container .row .left {
+  section.about .container .row .left {
     padding: 0;
   }
-  .start-page section.about .container .row .left .image-wrapper .image, .start-page section.about .container .row .left .image-wrapper .lines {
+  section.about .container .row .left .image-wrapper .image, section.about .container .row .left .image-wrapper .lines {
     padding-left: 0;
   }
-  .start-page section.about .container .row .left .image-wrapper .lines {
+  section.about .container .row .left .image-wrapper .lines {
     width: 33%;
   }
-  .start-page section.about .container .row .left .box {
+  section.about .container .row .left .box {
     width: 100%;
     bottom: 0;
     box-shadow: none;
@@ -764,10 +761,10 @@ section.about .container .row .right .btngroup a.btn-round {
 }
 @media (max-width: 576px) {
   /* SECTION ABOUT 576 */
-  .start-page section.about .container {
+  section.about .container {
     padding: 0;
   }
-  .start-page section.about .container .row .right {
+  section.about .container .row .right {
     padding: 0 2rem;
   }
 }
@@ -837,45 +834,45 @@ section.articles-news .cards a.card:hover .line, section.articles-news .cards a.
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
   /* SECTION ARTICLES-NEWS 1520 */
-  .start-page section.articles-news .top {
+  section.articles-news .top {
     flex-direction: column;
     align-items: start;
   }
-  .start-page section.articles-news .top .btngroup {
+  section.articles-news .top .btngroup {
     padding-top: 3rem;
   }
-  .start-page section.articles-news .cards {
+  section.articles-news .cards {
     flex-wrap: wrap;
   }
-  .start-page section.articles-news .cards .card {
+  section.articles-news .cards .card {
     flex-basis: 45%;
   }
-  .start-page section.articles-news .cards .card .image-wrapper img {
+  section.articles-news .cards .card .image-wrapper img {
     object-fit: cover;
     aspect-ratio: 3/2;
   }
-  .start-page section.articles-news .cards .card:first-child {
+  section.articles-news .cards .card:first-child {
     flex-basis: 100%;
   }
-  .start-page section.articles-news .cards .card:first-child .image-wrapper img {
+  section.articles-news .cards .card:first-child .image-wrapper img {
     max-height: 100%;
   }
 }
 @media (max-width: 768px) {
   /* SECTION ARTICLES-NEWS 768 */
-  .start-page section.articles-news .container .cards {
+  section.articles-news .container .cards {
     gap: 2rem 0;
   }
-  .start-page section.articles-news .container .cards .card {
+  section.articles-news .container .cards .card {
     flex-basis: 100%;
   }
 }
 @media (max-width: 576px) {
   /* SECTION ARTICLES-NEWS 576 */
-  .start-page section.articles-news .container .top .btngroup {
+  section.articles-news .container .top .btngroup {
     padding: 1rem 0;
   }
-  .start-page section.articles-news .container .cards .card {
+  section.articles-news .container .cards .card {
     flex-basis: 100%;
   }
 }
@@ -933,35 +930,35 @@ section.contact-information .container .boxes .box .text p {
 
 @media (max-width: 1520px) {
   /* SECTION INFORMATION 1520 */
-  .contact-page section.information .container .boxes {
+  section.contact-information .container .boxes {
     /*flex-direction: column;
     align-items: center;*/
     flex-wrap: wrap;
   }
-  .contact-page section.information .container .boxes .box {
+  section.contact-information .container .boxes .box {
     flex: none;
     width: 33dvw;
   }
 }
 @media (max-width: 992px) {
   /* SECTION INFORMATION 992 */
-  .contact-page section.information .container .boxes {
+  section.contact-information .container .boxes {
     flex-direction: column;
     align-items: center;
   }
-  .contact-page section.information .container .boxes .box {
+  section.contact-information .container .boxes .box {
     width: 50dvw;
   }
 }
 @media (max-width: 768px) {
   /* SECTION INFORMATION 768 */
-  .contact-page section.information .container .boxes .box {
+  section.contact-information .container .boxes .box {
     width: 100%;
   }
 }
 @media (max-width: 576px) {
   /* SECTION INFORMATION 576 */
-  .contact-page section.information .container .boxes .box .icon i {
+  section.contact-information .container .boxes .box .icon i {
     scale: 1;
   }
 }
@@ -991,11 +988,11 @@ section.features .container .box .col .grid div h3 {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   /* SECTION FEATURES 768 */
-  .start-page section.features .container .box {
+  section.features .container .box {
     flex-direction: column;
     gap: 3rem;
   }
-  .start-page section.features .container .box .col .grid {
+  section.features .container .box .col .grid {
     grid-template-columns: 45% 45%;
     grid-template-rows: auto;
     gap: 2rem;
@@ -1003,10 +1000,10 @@ section.features .container .box .col .grid div h3 {
 }
 @media (max-width: 576px) {
   /* SECTION FEATURES 576 */
-  .start-page section.features .container .box {
+  section.features .container .box {
     padding: 3rem;
   }
-  .start-page section.features .container .box .col .grid {
+  section.features .container .box .col .grid {
     grid-template-columns: 100%;
     grid-template-rows: auto;
     gap: 2rem 0;
@@ -1046,28 +1043,28 @@ section.hero .container .right .showcase-img {
 /* MEDIA QUERIES */
 @media (max-width: 1590px) {
   /* SECTION.HERO 1590 */
-  .start-page section.hero .container .right .showcase-img {
+  section.hero .container .right .showcase-img {
     right: 0;
   }
 }
 @media (max-width: 1520px) {
   /* SECTION.HERO 1520 */
-  .start-page section.hero .container .right {
+  section.hero .container .right {
     position: relative;
   }
-  .start-page section.hero .container .right .showcase-img {
+  section.hero .container .right .showcase-img {
     position: absolute;
   }
-  .start-page section.hero .container .left {
+  section.hero .container .left {
     gap: 0;
   }
-  .start-page section.hero .container .left .btngroup {
+  section.hero .container .left .btngroup {
     padding-bottom: 3rem;
   }
 }
 @media (max-width: 992px) {
   /* SECTION HERO 992 */
-  .start-page section.hero .container .right {
+  section.hero .container .right {
     display: none;
   }
 }
@@ -1096,7 +1093,7 @@ section.logo-bar .logos a:hover img, section.logo-bar .logos a:focus img {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   /* SECTION LOGO-BAR 768 */
-  .start-page section.logo-bar .container .logos {
+  section.logo-bar .container .logos {
     flex-wrap: nowrap;
   }
 }
@@ -1218,22 +1215,22 @@ section.project-case .objects a.object:hover .btngroup .btn:hover, section.proje
 /* MEDIA QUERIES */
 @media (max-width: 992px) {
   /* SECTION PROJECTS 992 */
-  .start-page section.project-case .highlight, .start-page section.project-case h2 {
+  section.project-case .highlight, section.project-case h2 {
     align-self: start;
   }
-  .start-page section.project-case .objects {
+  section.project-case .objects {
     grid-template-columns: 100%;
     grid-template-rows: auto;
     gap: 1rem 0;
     margin: 1rem 0;
   }
-  .start-page section.project-case .objects a.object:hover h3, .start-page section.project-case .objects a.object:hover .btngroup .btn {
+  section.project-case .objects a.object:hover h3, section.project-case .objects a.object:hover .btngroup .btn {
     text-decoration: underline;
   }
-  .start-page section.project-case .objects a.object:hover img {
+  section.project-case .objects a.object:hover img {
     height: 350px;
   }
-  .start-page section.project-case .objects a.object:hover .text {
+  section.project-case .objects a.object:hover .text {
     height: 0px;
   }
 }
@@ -1307,19 +1304,19 @@ section.service .lines {
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
   /* SECTION SERVICE 1520 */
-  .start-page section.service h2 {
+  section.service h2 {
     max-width: 100%;
   }
-  .start-page section.service .cards {
+  section.service .cards {
     flex-wrap: wrap;
   }
-  .start-page section.service .cards .card {
+  section.service .cards .card {
     width: calc(50% - 1.5rem);
   }
 }
 @media (max-width: 768px) {
   /* SECTION SERVICE 768 */
-  .start-page section.service .cards .card {
+  section.service .cards .card {
     width: 100%;
   }
 }
@@ -1349,28 +1346,28 @@ section.team .cards .card .text {
 /* MEDIA QUERIES */
 @media (max-width: 992px) {
   /* SECTION TEAM 992 */
-  .start-page section.team .container .top {
+  section.team .container .top {
     flex-direction: column;
   }
-  .start-page section.team .container .top .text {
+  section.team .container .top .text {
     align-self: start;
   }
-  .start-page section.team .container .top .btngroup {
+  section.team .container .top .btngroup {
     padding-top: 3rem;
   }
-  .start-page section.team .container .cards {
+  section.team .container .cards {
     flex-wrap: wrap;
   }
-  .start-page section.team .container .cards .card {
+  section.team .container .cards .card {
     flex-basis: 33%;
   }
 }
 @media (max-width: 576px) {
   /* SECTION TEAM 576 */
-  .start-page section.team .container .cards .card {
+  section.team .container .cards .card {
     flex-basis: 100%;
   }
-  .start-page section.team .container .cards .card img {
+  section.team .container .cards .card img {
     height: 345px;
     object-position: auto 20%;
   }
@@ -1420,35 +1417,35 @@ section.testimonials .container .cards .card .person .text p {
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
   /* SECTION TESTIMONIALS 1520 */
-  .start-page section.testimonials {
+  section.testimonials {
     padding: 0 0 7rem 0;
   }
 }
 @media (max-width: 992px) {
   /* SECTION TESTIMONIALS 992 */
-  .start-page section.testimonials .container {
+  section.testimonials .container {
     padding: 7rem 3rem;
   }
-  .start-page section.testimonials .container .highlight, .start-page section.testimonials .container h2 {
+  section.testimonials .container .highlight, section.testimonials .container h2 {
     align-self: start;
   }
-  .start-page section.testimonials .container .cards {
+  section.testimonials .container .cards {
     padding: 3rem 0;
     gap: 1.5rem;
     flex-direction: column;
   }
-  .start-page section.testimonials .container .cards .card {
+  section.testimonials .container .cards .card {
     gap: 0;
     padding: 0 3rem;
     align-items: center;
   }
-  .start-page section.testimonials .container .cards .card .stars {
+  section.testimonials .container .cards .card .stars {
     align-self: center;
   }
-  .start-page section.testimonials .container .cards .card .quote {
+  section.testimonials .container .cards .card .quote {
     text-align: center;
   }
-  .start-page section.testimonials .container .cards .card:not(:last-of-type)::after {
+  section.testimonials .container .cards .card:not(:last-of-type)::after {
     content: "";
     width: 50%;
     height: 1px;
@@ -1458,7 +1455,7 @@ section.testimonials .container .cards .card .person .text p {
 }
 @media (max-width: 576px) {
   /* SECTION TESTIMONIALS 576 */
-  .start-page section.testimonials .container {
+  section.testimonials .container {
     padding: 3rem 1rem;
   }
 }
@@ -1545,10 +1542,10 @@ section.why-us .right .image-wrapper img {
 /* MEDIA QUERIES */
 @media (max-width: 992px) {
   /* SECTION WHY US 992 */
-  .start-page section.why-us .right, .start-page section.why-us .box {
+  section.why-us .right, section.why-us .box {
     display: none;
   }
-  .start-page section.why-us .left .objects {
+  section.why-us .left .objects {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -1597,17 +1594,17 @@ section.newsletter img {
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
   /* SECTION NEWSLETTER 1520 */
-  .start-page section.newsletter .container {
+  section.newsletter .container {
     flex-direction: column;
     align-items: start;
     gap: 3rem;
   }
-  .start-page section.newsletter .container form fieldset {
+  section.newsletter .container form fieldset {
     flex-direction: column;
     gap: 1.5rem;
     align-items: start;
   }
-  .start-page section.newsletter .container form fieldset .group {
+  section.newsletter .container form fieldset .group {
     justify-content: start;
     flex: auto;
     width: 100%;
@@ -1615,34 +1612,34 @@ section.newsletter img {
 }
 @media (max-width: 768px) {
   /* SECTION NEWSLETTER 768 */
-  .start-page section.newsletter .container form fieldset .group {
+  section.newsletter .container form fieldset .group {
     flex-direction: column;
     align-items: start;
     width: 50dvw;
     gap: 1.5rem;
   }
-  .start-page section.newsletter .container form fieldset .group label, .start-page section.newsletter .container form fieldset .group input, .start-page section.newsletter .container form fieldset .group button {
+  section.newsletter .container form fieldset .group label, section.newsletter .container form fieldset .group input, section.newsletter .container form fieldset .group button {
     width: 100%;
     max-width: 100%;
   }
-  .start-page section.newsletter img {
+  section.newsletter img {
     bottom: 33%;
   }
 }
 @media (max-width: 576px) {
   /* SECTION NEWSLETTER 576 */
-  .start-page section.newsletter .container {
+  section.newsletter .container {
     gap: 2rem 0;
   }
-  .start-page section.newsletter .container form fieldset .group {
+  section.newsletter .container form fieldset .group {
     width: 100%;
   }
-  .start-page section.newsletter .container form fieldset .group label input {
+  section.newsletter .container form fieldset .group label input {
     padding: 1rem 2rem;
     position: relative;
     z-index: 5;
   }
-  .start-page section.newsletter .container form fieldset .group label .icon {
+  section.newsletter .container form fieldset .group label .icon {
     z-index: 10;
   }
 }

@@ -48,7 +48,7 @@ section.contact-information {
 
 @media (max-width: 1520px) {
     /* SECTION INFORMATION 1520 */
-    .contact-page section.information .container {
+    section.contact-information .container {
         .boxes {
             /*flex-direction: column;
             align-items: center;*/
@@ -65,7 +65,7 @@ section.contact-information {
 
 @media (max-width: 992px) { 
     /* SECTION INFORMATION 992 */
-    .contact-page section.information .container {
+    section.contact-information .container {
         .boxes {
             flex-direction: column;
             align-items: center;
@@ -79,7 +79,7 @@ section.contact-information {
 
 @media (max-width: 768px) { 
     /* SECTION INFORMATION 768 */
-    .contact-page section.information .container { 
+    section.contact-information .container { 
         .boxes {
             .box {
                 width: 100%;
@@ -90,7 +90,7 @@ section.contact-information {
 
 @media (max-width: 576px) { 
     /* SECTION INFORMATION 576 */
-    .contact-page section.information .container { 
+    section.contact-information .container { 
         .boxes .box {
             .icon i { 
                 scale: 1;

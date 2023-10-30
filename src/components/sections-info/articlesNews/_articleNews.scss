@@ -83,7 +83,7 @@ section.articles-news {
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
      /* SECTION ARTICLES-NEWS 1520 */
-     .start-page section.articles-news {
+      section.articles-news {
         .top {
             flex-direction: column;
             align-items: start;
@@ -119,7 +119,7 @@ section.articles-news {
 
 @media (max-width: 768px) { 
     /* SECTION ARTICLES-NEWS 768 */
-    .start-page section.articles-news .container {
+     section.articles-news .container {
         .cards {
             gap: 2rem 0;
 
@@ -132,7 +132,7 @@ section.articles-news {
 
 @media (max-width: 576px) {
      /* SECTION ARTICLES-NEWS 576 */
-     .start-page section.articles-news .container {
+      section.articles-news .container {
         .top .btngroup {
             padding: 1rem 0;
         }

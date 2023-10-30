@@ -29,7 +29,7 @@ section.team {
 /* MEDIA QUERIES */
 @media (max-width: 992px) { 
     /* SECTION TEAM 992 */
-    .start-page section.team .container {
+     section.team .container {
         .top {
             flex-direction: column;
             
@@ -54,7 +54,7 @@ section.team {
 
 @media (max-width: 576px) { 
     /* SECTION TEAM 576 */
-    .start-page section.team .container {
+     section.team .container {
         
         .cards {
             .card {

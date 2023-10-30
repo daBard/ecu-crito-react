@@ -37,7 +37,7 @@ section.features {
 /* MEDIA QUERIES */
 @media (max-width: 768px) { 
     /* SECTION FEATURES 768 */
-    .start-page section.features {
+     section.features {
         .container .box {
             flex-direction: column;
             gap: 3rem;
@@ -53,7 +53,7 @@ section.features {
 
 @media (max-width: 576px) {
     /* SECTION FEATURES 576 */
-    .start-page section.features .container {
+     section.features .container {
      .box {
         padding: 3rem;
 

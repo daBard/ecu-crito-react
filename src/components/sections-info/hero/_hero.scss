@@ -11,7 +11,6 @@ section.hero {
 
     .container {
         
-
         .left {
             gap: 3rem;
             flex: 1;
@@ -43,14 +42,14 @@ section.hero {
 /* MEDIA QUERIES */
 @media (max-width: 1590px) {
     /* SECTION.HERO 1590 */
-    .start-page section.hero .container .right .showcase-img {
+    section.hero .container .right .showcase-img {
         right: 0;
     }
 }
 
 @media (max-width: 1520px) {
     /* SECTION.HERO 1520 */
-    .start-page section.hero .container {
+    section.hero .container {
         .right {
 
             position: relative;
@@ -72,7 +71,7 @@ section.hero {
 
 @media (max-width: 992px) { 
     /* SECTION HERO 992 */
-    .start-page section.hero .container .right {
+    section.hero .container .right {
         display: none;
     }
 }

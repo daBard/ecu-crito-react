@@ -14,19 +14,15 @@ $headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation 
     font-size: 16px;
 }
 
-html, body, main {
+html, body, #root, main {
     background-color: $bg-white;
     
-    /* &, header, footer {
-        width: 100dvw;
-    }*/
+    max-width: 100dvw;
 
     & > * {
         color: $text-color-prim;
         font-family: $font;
     }
-
-    z-index: -99;
 }
 
 header, nav, main {

@@ -54,14 +54,14 @@ section.testimonials {
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
     /* SECTION TESTIMONIALS 1520 */
-    .start-page section.testimonials {
+     section.testimonials {
         padding: 0 0 7rem 0;
     }
 }
 
 @media (max-width: 992px) { 
     /* SECTION TESTIMONIALS 992 */
-    .start-page section.testimonials .container {
+     section.testimonials .container {
         padding: 7rem 3rem;
         
         .highlight, h2 {
@@ -101,7 +101,7 @@ section.testimonials {
 
 @media (max-width: 576px) {
      /* SECTION TESTIMONIALS 576 */
-     .start-page section.testimonials .container {
+      section.testimonials .container {
         padding: 3rem 1rem;
     }
 }
