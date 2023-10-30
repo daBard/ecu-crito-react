@@ -1,0 +1,69 @@
+.start-page section.team {
+    background-color: $prim-color;
+
+    .btn-c {
+        border: 1px solid $text-color-prim;
+    }
+
+    .cards {
+        gap: 2rem;
+        padding: 5rem 0 3rem 0;
+
+        .card {
+            background-color: transparent;
+            border: none;
+            flex: 1;
+
+            img {
+                height: 460px;
+                object-fit: cover;
+            }
+
+            .text {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 992px) { 
+    /* SECTION TEAM 992 */
+    .start-page section.team .container {
+        .top {
+            flex-direction: column;
+            
+            .text {
+                align-self: start;
+            }
+
+            .btngroup {
+                padding-top: 3rem;
+            }
+        }
+
+        .cards {
+            flex-wrap: wrap;
+
+            .card {
+                flex-basis: 33%;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) { 
+    /* SECTION TEAM 576 */
+    .start-page section.team .container {
+        
+        .cards {
+            .card {
+                flex-basis: 100%;
+                img {
+                    height: 345px;
+                    object-position: auto 20%;
+                }
+            }
+        }
+    }
+}

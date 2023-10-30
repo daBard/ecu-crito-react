@@ -1,6 +1,7 @@
 import React from 'react'
-import './features.css'
-import Button from '../../utilities/button/button'
+import { Link } from 'react-router-dom'
+
+//import './features.css'
 
 const features = () => {
   return (
@@ -11,7 +12,7 @@ const features = () => {
                     <div className="left">
                         <p className="highlight">Features</p>
                         <h2 className="heading display-4">Our Accounting is trusted by thousands of companies</h2>
-                        <Button btn="false" color="color" id="" title="Learn more" />
+                        <Link to="#" className="btn btn-c">Learn more</Link>
                     </div>
                 </div>
                 <div className="col">

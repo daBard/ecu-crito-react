@@ -1,0 +1,119 @@
+.start-page section.newsletter {
+    position: relative;
+
+    .container {
+        justify-content: space-between;
+        align-items: center;
+
+        form, fieldset {
+            width: 100%;
+        }
+
+        form fieldset {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            legend {
+                flex: 7;
+
+                h2 {
+                    margin: 0;
+                }
+            }
+
+            .group { 
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                gap: 1rem;
+                flex: 5;
+
+                label {
+                    flex-grow: 1;
+                    max-width: 20rem;
+                    
+                    #email {
+                        width: 100%;    
+                    }
+                }
+                
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        right: 0;
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1520px) {
+    /* SECTION NEWSLETTER 1520 */
+    .start-page section.newsletter .container {
+        flex-direction: column;
+        align-items: start;
+        gap: 3rem;
+
+        form fieldset {
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: start;
+
+            .group {
+                justify-content: start;
+                flex: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+ 
+@media (max-width: 768px) { 
+    /* SECTION NEWSLETTER 768 */
+    .start-page section.newsletter {
+        .container {
+            form fieldset {
+                .group {
+                    flex-direction: column;
+                    align-items: start;
+                    width: 50dvw;
+                    gap: 1.5rem;
+
+                    label, input, button {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        img {
+            bottom: 33%;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+     /* SECTION NEWSLETTER 576 */
+     .start-page section.newsletter .container {
+        gap: 2rem 0;
+
+        form fieldset{
+            .group {
+                width: 100%;
+
+                label  {
+                    input {
+                        padding: 1rem 2rem;
+                        position: relative;
+                        z-index: 5;
+                    }
+                    .icon {
+                        z-index: 10;
+                    }
+                }
+            }
+        }
+    }
+}

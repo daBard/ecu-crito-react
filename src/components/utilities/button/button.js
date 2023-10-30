@@ -1,7 +1,8 @@
 import React from 'react'
-import './button.css'
+// import './button.css'
 
-const button = ({btn, type, form, value, id, color, title, url}) => {
+const button = ({type, form, value, id, color, title}) => {
+
     let c = 'btn '
 
     switch(color) {
@@ -18,18 +19,10 @@ const button = ({btn, type, form, value, id, color, title, url}) => {
             c += 'btn-bg'
         break
     }
-
-    if (btn === 'true') {
-        return (
-            <button type={type} form={form} value={value} id={id} class={c}>{title}</button>
-        )
-    }
-    else {
-        return (
-            <a href={url} id={id} class={c}>{title}</a>
-        )
-    }
- 
+    
+    return (
+        <button type={type} form={form} value={value} id={id} class={c}>{title}</button>
+    )
 }
 
 export default button

@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import adeoluEletu from '../../../assets/img/adeolu-eletu-E7RLgUjjazc-unsplash.jpg'
 import marekLevak from '../../../assets/img/marek-levak-zANXcXyByos-unsplash.jpg'
 import oliDale from '../../../assets/img/oli-dale-xjSkI_seiZY-unsplash.jpg'
 import carlosMuza from '../../../assets/img/carlos-muza-hpjSkU2UYSU-unsplash.jpg'
-import './projectCase.css'
-import Button from '../../utilities/button/button'
+//import './projectCase.css'
 
 const projectCase = () => {
   return (
@@ -13,7 +14,7 @@ const projectCase = () => {
             <p className="highlight">Project & case studies</p>
             <h2 className="display-3">Let's looks our global projects</h2>
             <div className="objects">
-                <a href="#" className="object">
+                <Link to="#" className="object">
                     <img src={adeoluEletu} alt="" loading="lazy" />
                     <h3>Grow your business</h3>
                     <div className="text">
@@ -23,8 +24,8 @@ const projectCase = () => {
                     <div className="btngroup">
                         <div className="btn btn-w">Read more</div>
                     </div>
-                </a>
-                <a href="#" className="object">
+                </Link>
+                <Link to="#" className="object">
                     <img src={marekLevak} alt="" loading="lazy" />
                     <h3>Why your client needs a responsive website</h3>
                     <div className="text">
@@ -34,8 +35,8 @@ const projectCase = () => {
                     <div className="btngroup">
                         <div className="btn btn-w">Read more</div>
                     </div>
-                </a>
-                <a href="#" className="object">
+                </Link>
+                <Link to="#" className="object">
                     <img src={oliDale} alt="" loading="lazy" />
                     <h3>Educate your emplyees to get better results</h3>
                     <div className="text">
@@ -45,8 +46,8 @@ const projectCase = () => {
                     <div className="btngroup">
                         <div className="btn btn-w">Read more</div>
                     </div>
-                </a>
-                <a href="#" className="object">
+                </Link>
+                <Link to="#" className="object">
                     <img src={carlosMuza} alt="" loading="lazy" />    
                     <h3>Business insigts is a important piece of your business</h3>
                     <div className="text">
@@ -56,10 +57,10 @@ const projectCase = () => {
                     <div className="btngroup">
                         <div className="btn btn-w">Read more</div>
                     </div>
-                </a>
+                </Link>
             </div>
             <div className="btngroup">
-                <Button btn="true" color="black" title="All recent projects" />
+                <Link to="#" className="btn btn-b">All recent projects</Link>
             </div>
         </div>
     </section>

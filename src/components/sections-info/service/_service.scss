@@ -1,0 +1,113 @@
+.start-page section.service {
+    position: relative;
+
+    h2 {
+        max-width: 50%;
+    }
+
+    .cards {
+        gap: 2rem;
+        padding: 3rem 0;
+
+        .card {
+            border: none;
+            padding: 3rem 2rem;
+            justify-content: space-between;
+
+            .line {
+                height: 1px;
+                width: 20%;
+                background-color: $text-color-prim;
+                margin-bottom: 2rem;
+            }
+
+            .btn-round {
+                display: flex;
+                justify-content: end;
+                i {
+                    background-color: $text-color-prim;
+                    color: $bg-white;
+                    border: none;
+                }
+            }
+
+            &, & > * {
+                @include default-transition();
+            }
+            
+            &:hover, &:focus {
+                background-color: $prim-color;
+
+                h3 {
+                    text-decoration: underline;
+                }
+
+                i {
+                    background-color: $bg-white;
+                    color: $text-color-prim;
+                }
+            }
+
+            &.flipped {
+                background-color: $prim-color;
+
+                .btn-round i {
+                    background-color: $bg-white;
+                    color: $text-color-prim;
+                }
+
+                &:hover, &:focus {
+                    background-color: $bg-white;
+
+                i {
+                    background-color: $text-color-prim;
+                    color: $bg-white;
+                }
+                }
+            }
+        }  
+    }
+
+    .btngroup {
+        .btn {
+            width: fit-content;
+        }
+    }
+
+    .lines {
+        max-width: 50dvw;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }  
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1520px) {
+    /* SECTION SERVICE 1520 */
+    .start-page section.service {
+        h2 {
+            max-width: 100%;
+        }
+
+        .cards {
+            flex-wrap: wrap;
+
+            .card {
+                width: calc(50% - 1.5rem);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) { 
+    /* SECTION SERVICE 768 */
+    .start-page section.service {
+    
+        .cards {
+            .card {
+                width: 100%;
+            }
+        }
+    }
+}

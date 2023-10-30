@@ -1,0 +1,107 @@
+.start-page section.testimonials {
+    background-color: $prim-color;
+
+    .container {
+        padding: 7rem 0;
+        background-color: $bg-white;
+        align-items: center;
+
+        .cards {
+            padding: 7rem;
+            gap: 7rem;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 1rem;
+                border: none;
+                
+                .stars {
+                    letter-spacing: .5rem;
+                }
+
+                .quote {
+                    line-height: 2rem;
+                }
+
+                .person {
+                    gap: 1rem;
+                    align-items: center;
+
+                    img {
+                        height: 5rem;
+                        width: 5rem;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .text {
+                        h3, p {
+                            margin: 0;
+                        }
+
+                        p {
+                            color: $color-highlight;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1520px) {
+    /* SECTION TESTIMONIALS 1520 */
+    .start-page section.testimonials {
+        padding: 0 0 7rem 0;
+    }
+}
+
+@media (max-width: 992px) { 
+    /* SECTION TESTIMONIALS 992 */
+    .start-page section.testimonials .container {
+        padding: 7rem 3rem;
+        
+        .highlight, h2 {
+            align-self: start;
+        }
+
+        .cards {
+            padding: 3rem 0;
+            gap: 1.5rem;
+            flex-direction: column;
+
+            .card {
+                gap: 0;
+                padding: 0 3rem;
+                align-items: center;
+
+                .stars {
+                    align-self: center;
+                }
+
+                .quote {
+                    text-align: center;
+                }
+
+                &:not(:last-of-type)::after {
+                    content: "";
+                    width: 50%;
+                    height: 1px;
+                    background-color: $line-color;
+                    margin-top: 1.5rem;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 576px) {
+     /* SECTION TESTIMONIALS 576 */
+     .start-page section.testimonials .container {
+        padding: 3rem 1rem;
+    }
+}

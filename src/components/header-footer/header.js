@@ -1,19 +1,19 @@
 import React from 'react'
 import logo from '../../assets/img/logotype.svg'
-import './header-footer.css'
-import Button from '../utilities/button/button'
+import { NavLink, Link } from 'react-router-dom'
 
 
 const header = () => {
   return (
+    <>
     <header>
         <div className="container w-max">
                 <nav className="navbar navbar-expand-lg">
-                    <a className="navbar-brand" href="./index.html">
+                    <Link className="navbar-brand" to="/">
                         <img src={logo} alt="Crito logo" className="" />
-                    </a>
+                    </Link>
                 
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
@@ -46,22 +46,22 @@ const header = () => {
                             <div className="navi d-flex">
                                     <ul className="navbar-nav">
                                         <li className="nav-item">
-                                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                            <NavLink to="/" className="nav-link" aria-current="page" end>Home</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="#">Service</a>
+                                            <NavLink to="/services" className="nav-link" aria-current="page" end>Services</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="#">News</a>
+                                            <NavLink to="/News" className="nav-link" aria-current="page" end>News</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="contact.html">Contact</a>
+                                            <NavLink to="/Contact" className="nav-link" aria-current="page" end>Contact</NavLink>
                                         </li>
                                     </ul>
                             </div>
                             
                             <div className="login d-flex">
-                                <Button btn="true" color="color" id="login-btn" title="Login" />
+                                <Link className="btn btn-c" id="login-btn">Login</Link>
                             </div>
 
                             <div className="line"></div>
@@ -72,6 +72,7 @@ const header = () => {
                 </nav>
             </div>
     </header>
+    </>
   )
 }
 

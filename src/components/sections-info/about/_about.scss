@@ -1,0 +1,113 @@
+.start-page section.about {
+    background-color: $bg-white;
+    
+    .container {
+
+        .row {
+            gap: 5rem;
+
+            .left {
+                position: relative;
+
+                .image-wrapper {
+                    
+
+                    .image {
+                        height: 700px;
+                        width: 100%;
+                        object-fit: cover;  
+                        padding-left: 3rem;
+                    }
+
+                    .lines {
+                        padding-left: 3rem;
+                        width: 45%;
+                        position: absolute;
+                        top: 10%;
+                        left: 0;
+                    }
+                }
+
+                .box {
+                    width: 60%;
+                    padding: 2rem;
+                    background-color: lightblue;
+                    position: absolute;
+                    bottom: 5rem;
+                    left: 0;
+                    box-shadow: -5px 10px 100px 10px $line-color;
+
+                    p:first-of-type {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                padding: 1rem;
+
+                h2 {
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+
+                .btngroup {
+                    gap: 3rem;
+                     
+                    a.btn-round {
+                        color: $text-color-prim;
+                    }
+                }
+            }
+        }   
+    }
+}
+
+@media (max-width: 992px) { 
+    /* SECTION ABOUT 992 */
+    .start-page section.about .container .row {
+        flex-wrap: wrap-reverse;
+
+        .right {
+            .text {
+                margin: 1rem 0;
+            }
+        }
+
+        .left {
+            padding: 0;
+            .image-wrapper {
+                .image, .lines {
+                    padding-left: 0;
+                }
+
+                .lines {
+                    width: 33%;
+                }
+            }
+
+            .box {
+                width: 100%;
+                bottom: 0;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    /* SECTION ABOUT 576 */
+    .start-page section.about .container {
+       padding: 0;
+
+        .row .right {
+            padding: 0 2rem; 
+        }
+    }
+}

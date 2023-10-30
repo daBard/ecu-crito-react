@@ -1,0 +1,16 @@
+.contact-page section.hero {
+    position: relative;
+
+    img.bg-lines { 
+        max-width: 40dvw;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .container { 
+        justify-content: center;
+        align-items: flex-start;
+    }
+}

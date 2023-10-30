@@ -1,12 +1,11 @@
 import React from 'react'
+
 import paperz from '../../../assets/img/paperz.svg'
 import dorfus from '../../../assets/img/dorfus.svg'
 import martino from '../../../assets/img/martino.svg'
 import square from '../../../assets/img/square.svg'
 import gobona from '../../../assets/img/gobona.svg'
-import './logoBar.css'
-
-import Button from '../../utilities/button/button'
+//import './logoBar.css'
 
 const logoBar = () => {
   return (

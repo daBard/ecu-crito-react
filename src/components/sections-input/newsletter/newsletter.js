@@ -1,6 +1,6 @@
 import React from 'react'
 import backgroundWavyLines from '../../../assets/img/background-wavy-lines.svg'
-import './newsletter.css'
+//import './newsletter.css'
 import Button from '../../utilities/button/button'
 
 const newsletter = () => {
@@ -16,7 +16,7 @@ const newsletter = () => {
                             <i className="icon"></i>
                         </label>
                         
-                        <Button btn="true" type="submit" form="newsletter-form" value="Subscribe" color="color" title="Subscribe" />
+                        <Button type="submit" form="newsletter-form" value="Subscribe" color="color" title="Subscribe" />
                     </div>
                 </fieldset>
             </form>

@@ -1,0 +1,69 @@
+@import '../../../css/mixins';
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    z-index: 1;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    &.btn-w, &.btn-c, &.btn-b {
+        @include default-transition();
+    }
+    
+    &.btn-w {
+        background-color: $bg-white;
+        border-color: $text-color-prim;
+
+
+        &:hover, &:focus {
+            background-color: $text-color-prim;
+            color: $bg-white;
+        }
+    }
+
+    &.btn-bg {
+        background-color: $bg-color;
+        border-color: $text-color-prim;
+
+        &:hover, &:focus {
+            background-color: $text-color-prim;
+            color: $bg-white;
+        }
+    }
+
+    &.btn-c {
+        background-color: $prim-color;
+        border-color: $prim-color;
+
+        &:hover, &:focus {
+            background-color: $text-color-prim;
+            border-color: $text-color-prim;
+            color: $bg-white;
+        }
+    }
+
+    &.btn-b {
+        background-color: $text-color-prim;
+        border-color: $text-color-prim;
+        color: $bg-color;
+
+        &:hover, &:focus {
+            background-color: transparent;
+            color: $text-color-prim
+        }
+    }
+
+    &::after {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 900;
+
+        margin-left: .5rem;
+        font: var(--fa-font-solid);
+        content: "\e09f";
+    }
+}

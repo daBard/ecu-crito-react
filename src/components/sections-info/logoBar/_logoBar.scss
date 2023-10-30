@@ -1,0 +1,36 @@
+.start-page section.logo-bar {
+    background-color: $bg-white;
+
+    .logos {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        
+        a {
+            background-color: transparent;
+            @include default-transition();
+
+            img {
+                mix-blend-mode: multiply;
+            }
+
+            &:hover, &:focus { 
+                scale: 1.2;
+                background-color: transparent;
+
+                img {
+                    mix-blend-mode: multiply;
+                }
+            }
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) { 
+    /* SECTION LOGO-BAR 768 */
+    .start-page section.logo-bar .container {
+        .logos {
+            flex-wrap: nowrap;
+        }
+    }
+}

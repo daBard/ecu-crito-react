@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import logoWhite from '../../assets/img/logotype-white.svg'
 import bgLinesWhiteRight from '../../assets/img/background-lines-white-right.svg'
-import './header-footer.css'
+// import './header-footer.css'
 
 const footer = () => {
   return (
+    <>
     <footer className="w-100">
         <section className="w-100 top">
             <div className="container">
@@ -14,31 +17,31 @@ const footer = () => {
                 </div>
                 <div className="f f-2">
                     <h2>Company</h2>
-                    <a href="#">About</a>
-                    <a href="#">Features</a>
-                    <a href="#">Works</a>
-                    <a href="#">Career</a>                    
+                    <Link to="#">About</Link>
+                    <Link to="#">Features</Link>
+                    <Link to="#">Works</Link>
+                    <Link to="#">Career</Link>                    
                 </div>
                 <div className="f f-3">
                     <h2>Help</h2>
-                    <a href="#">Customer Support</a>
-                    <a href="#">Delivery Details</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Privacy Policy</a>
+                    <Link to="#">Customer Support</Link>
+                    <Link to="#">Delivery Details</Link>
+                    <Link to="#">Terms & Conditions</Link>
+                    <Link to="#">Privacy Policy</Link>
                 </div>
                 <div className="f f-4">
                     <h2>Resources</h2>
-                    <a href="#">Free eBooks</a>
-                    <a href="#">Development Tutorial</a>
-                    <a href="#">How to - Blog</a>
-                    <a href="#">Youtube Playlist</a>
+                    <Link to="#">Free eBooks</Link>
+                    <Link to="#">Development Tutorial</Link>
+                    <Link to="#">How to - Blog</Link>
+                    <Link to="#">Youtube Playlist</Link>
                 </div>
                 <div className="f f-5">
                     <h2>Link</h2>
-                    <a href="#">Free eBooks</a>
-                    <a href="#">Development Tutorial</a>
-                    <a href="#">How to - Blog</a>
-                    <a href="#">Youtube Playlist</a>
+                    <Link to="#">Free eBooks</Link>
+                    <Link to="#">Development Tutorial</Link>
+                    <Link to="#">How to - Blog</Link>
+                    <Link to="#">Youtube Playlist</Link>
                 </div>
             </div>
             <img src={bgLinesWhiteRight} alt="" className="lines" loading="lazy" />
@@ -55,6 +58,7 @@ const footer = () => {
             </div>
         </section>
     </footer>
+    </>
   )
 }
 

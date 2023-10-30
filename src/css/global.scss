@@ -1,0 +1,326 @@
+/* IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap');
+
+@import './colors';
+@import './mixins';
+@import '../components/utilities/button/button';
+
+$font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+/* GLOBAL */
+:root {
+    font-size: 16px;
+}
+
+html, body, main {
+    background-color: $bg-white;
+    
+    /* &, header, footer {
+        width: 100dvw;
+    }*/
+
+    & > * {
+        color: $text-color-prim;
+        font-family: $font;
+    }
+
+    z-index: -99;
+}
+
+header, nav, main {
+    background-color: $bg-color;
+}
+
+footer {
+    background-color: $text-color-prim;
+}
+
+section {
+    padding: 7rem 0;    
+
+    &.m-small {
+        padding: 3rem 0;
+    }
+
+    &.m-none {
+        padding: 0;
+    }
+}
+
+.container {
+    max-width: 1520px;
+    z-index: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headings-font;
+    color: $text-color-prim;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+}
+
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-weight: 700;
+}
+
+.highlight {
+    color: $color-highlight;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+}
+
+/* COMPONENTS */
+/* Buttons */
+.btn-round {
+    gap: 1rem;
+    font-weight: 700;
+        i {
+            padding: 1rem;
+            border: 1px solid $text-color-prim;
+            border-radius: 50%;
+            @include default-transition();
+        }
+    
+    &:hover, &:focus {
+        i {
+            background-color: $text-color-prim;
+            color: $bg-white
+        }
+    }
+    
+}
+
+/* Dots */
+.dots {
+    gap: 1.75rem;
+    margin-bottom: 2rem;
+
+    .dot {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: $text-color-sec;
+    opacity: .5;
+    cursor: pointer;
+
+        &.active, &:hover {
+            background-color: $text-color-prim;
+            opacity: 1;
+        }
+    }
+}
+
+/* Social buttons */
+.social {
+    gap: 2rem;
+
+    a {
+        height: 2.5rem;
+        width: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        
+        /* border: 1px dashed transparent;
+        border-radius: 50%; */
+
+        &, & i {
+            @include default-transition();
+            line-height: 0;
+            vertical-align: 0;
+        }
+
+        & i:hover, & i:focus {
+            /* animation: spin-clock 1s linear infinite;
+            border-color: $text-color-prim; 
+
+            i { animation: spin-counter-clock 1s linear infinite; } */
+
+            animation: popping .6s linear infinite;
+        }
+    }
+}
+
+/* Forms */
+form {
+
+    fieldset {
+        
+        legend { margin: 0; }
+
+        label {
+            position: relative;
+
+            input, textarea {
+                background-color: $bg-white;
+                border-radius: 25px;
+                padding: 1rem 2rem;
+                border: 1px solid transparent;
+                font-family: $font;
+
+                &:hover, &:focus {
+                    border: 1px solid $text-color-prim;
+                }
+
+                &:required {
+                    border-color: transparent;
+
+                    &:hover, &:focus {
+                        &:focus:invalid {
+                            border-color: $invalid;
+
+                            & + .icon::after {
+                                content: "\f057";
+                                color: $invalid; 
+                            }
+                        }
+                    }
+
+                    &:valid {
+                        border-color: $valid;
+
+                        & + .icon::after { 
+                            content: "\f058";
+                            color: $valid; 
+                        }
+                    }
+                    
+                }
+                
+                &::placeholder {
+                color: $text-color-sec;
+                }
+
+                &:focus::placeholder {
+                color: transparent;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 0;
+                right: .75rem;
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                &::after {
+                    font: var(--fa-font-solid);
+                    font-size: 1.75rem;
+                    content: "";                          
+                }
+
+                &.top {
+                    top: .75rem;
+                    align-items: start;
+                }
+            }
+        }        
+    }
+}
+
+/* ANIMATIONS */
+/* Spin-pop */
+@keyframes spin-pop {
+    50% {
+        scale: .2;
+    }
+    75% {
+        transform: rotate(360deg);
+        scale: 1.2;
+    }
+    100% {
+        transform: rotate(360deg);
+        scale: 1.1;
+    }
+}
+
+/* Spin-clock UNUSED
+@keyframes spin-clock {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Spin-counter-clock UNUSED
+@keyframes spin-counter-clock {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+} */
+
+/* Popping */
+@keyframes popping {
+    50% { scale: 1.2; }
+    100% { scale: 1; }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1520px) {
+    /* GLOBAL */
+    .container {
+        padding: 0 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    /* GLOBAL */
+    section:first-of-type {
+        padding-top: 3rem;
+    }
+}
+
+@media (max-width: 576px) { 
+    /* GLOBAL 576*/
+    :root {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    main i {
+        scale: .6;
+    }
+}
+
+@import '../components/header-footer/header-footer';
+@import '../components/sections-info/about/about';
+@import '../components/sections-info/articlesNews/articleNews';
+@import '../components/sections-info/contactHero/contactHero';
+@import '../components/sections-info/contactInformation/contactInformation';
+@import '../components/sections-info/features/features';
+@import '../components/sections-info/hero/hero';
+@import '../components/sections-info/logoBar/logoBar';
+@import '../components/sections-info/map/map';
+@import '../components/sections-info/projectCase/projectCase';
+@import '../components/sections-info/service/service';
+@import '../components/sections-info/team/team';
+@import '../components/sections-info/testimonials/testimonials';
+@import '../components/sections-info/whyUs/whyUs';
+@import '../components/sections-input/newsletter/newsletter';
+@import '../components/sections-input/contactForm/contactForm';
+

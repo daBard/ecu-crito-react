@@ -1,0 +1,78 @@
+.contact-page section.form {
+    background-color: $bg-white;
+    padding: 1.5rem 0 7rem 0;
+    .container {
+        background-color: $bg-color;
+
+        form {
+            padding: 7rem;
+
+            fieldset {
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+
+                legend {
+                    width: 25%;
+                    h2 {
+                    text-transform: none;
+                    }
+                }
+
+                label, input, textarea, button {
+                    width: 100%;
+                }
+
+                button {
+                    padding: 1rem 2rem;
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }    
+}
+
+
+@media (max-width: 1520px) {
+    /* SECTION FORM 1520 */
+    .contact-page section.form .container {
+        #contact-form fieldset {
+            legend {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) { 
+     /* SECTION FORM 992 */
+     .contact-page section.form .container {
+        #contact-form fieldset {
+            legend {
+                width: 75%;
+            }
+        }
+    }    
+}
+
+@media (max-width: 768px) { 
+    /* SECTION FORM 768 */
+    .contact-page section.form .container {
+        #contact-form {
+            padding: 3rem 0;
+            fieldset legend {
+                text-align: center;
+                width: 100%;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 576px) { 
+    /* SECTION FORM 576 */
+    .contact-page section.form {
+        padding-bottom: 3rem;
+    }
+}

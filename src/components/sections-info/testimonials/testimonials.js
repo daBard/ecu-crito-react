@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import cassandraWarren from '../../../assets/img/vince-veras-AJIqZDAUD7A-unsplash.jpg'
 import amandaTulling from '../../../assets/img/christina-wocintechchat-com-PlikkWB79qs-unsplash.jpg'
 import jackMcDogglas from '../../../assets/img/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg'
-import './testimonials.css'
-import Button from '../../utilities/button/button'
+//import './testimonials.css'
 
 const testimonials = () => {
   return (
@@ -47,8 +48,7 @@ const testimonials = () => {
                 </div>
             </div>
             <div className="btngroup">
-            
-                <Button btn="true" color="black" title="All reviews" />
+                <Link to="#" className="btn btn-b">All reviews</Link>
             </div>
         </div>
     </section>
