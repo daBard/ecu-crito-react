@@ -5,13 +5,13 @@ import linkedinSalesSolutions from '../../../assets/img/linkedin-sales-solutions
 import emilianoVittoriosi from '../../../assets/img/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg'
 import kobuAgency from '../../../assets/img/kobu-agency-ipARHaxETRk-unsplash.jpg'
 
-const apiUrl = "https://win23-assignment.azurewebsites.net/api"
+// const apiUrl = "https://win23-assignment.azurewebsites.net/api"
 
 const articlesNews = () => {
-    const maxArticles = 3
-    const articlesX = getArticles()
+//     const maxArticles = 3
+//     const articlesX = getArticles()
 
-    console.log(articlesX)
+//     console.log(articlesX)
 
     return (
         <section className="articles-news">
@@ -88,14 +88,14 @@ const articlesNews = () => {
 
 export default articlesNews
 
-const getArticles = async () => {
-    try {
-        const result = await fetch(`${apiUrl}/articles`)
-        //const articles = await result
+// const getArticles = async () => {
+//     try {
+//         const result = await fetch(`${apiUrl}/articles`)
+//         //const articles = await result
         
-        return Promise.resolve(result)
-    }
-    catch(err) {
-        console.warn(err)
-    }
-}
+//         return Promise.resolve(result)
+//     }
+//     catch(err) {
+//         console.warn(err)
+//     }
+// }
