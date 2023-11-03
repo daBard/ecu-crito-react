@@ -2,6 +2,7 @@ import React from 'react'
 
 import Header from '../components/header-footer/header'
 import Footer from '../components/header-footer/footer'
+import ArticleNews from '../components/sections-info/articleNews/articleNews'
 
 const NewsDetails = () => {
   return (
@@ -9,7 +10,7 @@ const NewsDetails = () => {
     <>
     <Header />
     <main className="w-100">
-      <div>NewsDetails</div>
+      <ArticleNews />
     </main>
     <Footer />
     </>

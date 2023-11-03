@@ -1,0 +1,21 @@
+@import '../../../css/mixins';
+
+.dots {
+    gap: 1.75rem;
+    margin-bottom: 2rem;
+
+    .dot {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: $text-color-sec;
+    opacity: .5;
+    cursor: pointer;
+    @include default-transition();
+
+        &.active, &:hover {
+            background-color: $text-color-prim;
+            opacity: 1;
+        }
+    }
+}

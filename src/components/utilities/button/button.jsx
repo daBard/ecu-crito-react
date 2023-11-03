@@ -20,7 +20,7 @@ const button = ({type, form, value, id, color, title}) => {
     }
     
     return (
-        <button type={type} form={form} value={value} id={id} classname={c}>{title}</button>
+        <button type={type} form={form} value={value} id={id} class={c}>{title}</button>
     )
 }
 

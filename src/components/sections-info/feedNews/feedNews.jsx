@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ArticleGrid from '../../utilities/articleGrid/articleGrid'
 
-const articlesNews = ({}) => {
+const feedNews = ({}) => {
 
     const shownArticles = 3
     const maxArticles = 12
@@ -20,21 +20,23 @@ const articlesNews = ({}) => {
                     </div>
                 </div>
                 <ArticleGrid 
-                    shownArticles={shownArticles} maxArticles={maxArticles}
+                    // shownArticles={shownArticles} maxArticles={maxArticles}
                 />
-                <div className="dots d-flex justify-content-center">
+                
+
+                {/* <div className="dots d-flex justify-content-center">
                     <div className="dot active"></div>
                     <div className="dot"></div>
                     <div className="dot"></div>
                     <div className="dot"></div>
                     <div className="dot"></div>
-                </div>
+                </div> */}
             </div>
         </section>
     )
 }
 
-export default articlesNews
+export default feedNews
 
 // const getArticles = async () => {
 //     try {

@@ -36,7 +36,7 @@ section.contact-form {
 
 @media (max-width: 1520px) {
     /* SECTION FORM 1520 */
-    .contact-page section.form .container {
+    section.contact-form .container {
         #contact-form fieldset {
             legend {
                 width: 50%;
@@ -47,7 +47,7 @@ section.contact-form {
 
 @media (max-width: 992px) { 
      /* SECTION FORM 992 */
-     .contact-page section.form .container {
+     section.contact-form .container {
         #contact-form fieldset {
             legend {
                 width: 75%;
@@ -58,7 +58,7 @@ section.contact-form {
 
 @media (max-width: 768px) { 
     /* SECTION FORM 768 */
-    .contact-page section.form .container {
+    section.contact-form .container {
         #contact-form {
             padding: 3rem 0;
             fieldset legend {
@@ -72,7 +72,7 @@ section.contact-form {
 
 @media (max-width: 576px) { 
     /* SECTION FORM 576 */
-    .contact-page section.form {
+    section.contact-form.form {
         padding-bottom: 3rem;
     }
 }

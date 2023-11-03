@@ -11,7 +11,7 @@ import WhyUS from '../components/sections-info/whyUs/whyUs'
 import ProjectCase from '../components/sections-info/projectCase/projectCase'
 import Team from '../components/sections-info/team/team'
 import Testimonials from '../components/sections-info/testimonials/testimonials'
-import ArticlesNews from '../components/sections-info/articlesNews/articlesNews'
+import ArticlesNews from '../components/sections-info/feedNews/feedNews'
 import Newsletter from '../components/sections-input/newsletter/newsletter'
 
 const Home = () => {

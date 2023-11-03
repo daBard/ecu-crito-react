@@ -1,31 +1,51 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-//import { getData } from '../../../helper/api'
 
-const articleGrid = ({shownArticles, maxArticles = null}) => {
-    const [articles, setArticles] = useState([{}]);
+import Dots from'../dots/dots'
+
+
+const articleGrid = ({shownArticles = 3, maxArticles = 7}) => {
+    const [articles, setArticles] = useState([{}])
+    const [dotElements, setDotElements] = useState()
+    //const [nDots, setNDots] = useState(Math.ceil(maxArticles / shownArticles))
+    const [currentDot, setCurrentDot] = useState()
     const monthName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
     useEffect(() => {
         displayArticles()
     }, [])
+  
+    useEffect(() => {
+        let nDots = Math.ceil(maxArticles / shownArticles)
+        let elements = Array.from({ length: nDots }, (_, index) => (
+            <div key={index} data-dot={index} className="dot"></div>
+        ))
 
+    setDotElements(elements)
+    }, [shownArticles, maxArticles])
+    
 
     const displayArticles = async () => {
-        let data = await getArticles()
-        data = await cutData(data)
-        let newData = await changeDate(data)
+        let data = await getData()
+        data = await cutMaxData(data)
+        let newData = await cutData(data)
+        newData = await changeDate(newData)
 
         setArticles(newData)
     }
 
-    async function getArticles() {
+    async function getData() {
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
         return (await result.json())
     }
 
-    const cutData = (data) => {
+    const cutMaxData = (data) => {
+        if (maxArticles != null)
+            data = data.slice(0, shownArticles)
+        return(data)
+    }
 
+    const cutData = (data) => {
         if (shownArticles != null)
             data = data.slice(0, shownArticles)
         return(data)
@@ -48,10 +68,10 @@ const articleGrid = ({shownArticles, maxArticles = null}) => {
     }
 
     return (
+    <>
         <div className="article-grid cards">
             {articles.map(article => (
-                <Link key={article.id} to={"newsdetails?article=" + article.id} className="card d-flex flex-column">
-                    {console.log(article.id)}
+                <Link key={article.id} to={`/news/details/${article.id}`} className="card d-flex flex-column">
                     <div className="image-wrapper">
                         <img src={article.imageUrl} alt="" loading="lazy" />
                         <div className="date-box">
@@ -68,6 +88,10 @@ const articleGrid = ({shownArticles, maxArticles = null}) => {
                 </Link>
             ))}
         </div>
+        <div className="dots d-flex justify-content-center">
+            {dotElements}
+        </div>
+    </>
     )
 }
 

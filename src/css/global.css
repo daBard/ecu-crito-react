@@ -1,62 +1,6 @@
 /* IMPORT */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap");
-.btn {
-  padding: 1rem 2rem;
-  border-radius: 25px;
-  cursor: pointer;
-  border: 1px solid transparent;
-  z-index: 1;
-  font-weight: 700;
-  text-transform: capitalize;
-}
-.btn.btn-w, .btn.btn-c, .btn.btn-b {
-  transition: all 0.3s ease-in-out;
-}
-.btn.btn-w {
-  background-color: #ffffff;
-  border-color: #191919;
-}
-.btn.btn-w:hover, .btn.btn-w:focus {
-  background-color: #191919;
-  color: #ffffff;
-}
-.btn.btn-bg {
-  background-color: #f0efe9;
-  border-color: #191919;
-}
-.btn.btn-bg:hover, .btn.btn-bg:focus {
-  background-color: #191919;
-  color: #ffffff;
-}
-.btn.btn-c {
-  background-color: #f9d783;
-  border-color: #f9d783;
-}
-.btn.btn-c:hover, .btn.btn-c:focus {
-  background-color: #191919;
-  border-color: #191919;
-  color: #ffffff;
-}
-.btn.btn-b {
-  background-color: #191919;
-  border-color: #191919;
-  color: #f0efe9;
-}
-.btn.btn-b:hover, .btn.btn-b:focus {
-  background-color: transparent;
-  color: #191919;
-}
-.btn::after {
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 900;
-  margin-left: 0.5rem;
-  font: var(--fa-font-solid);
-  content: "\e09f";
-}
-
 .article-grid.cards {
   padding: 3rem 0;
   display: grid;
@@ -132,6 +76,80 @@
     grid-template-columns: 1fr;
   }
 }
+.dots {
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+.dots .dot {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: #84848a;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.dots .dot.active, .dots .dot:hover {
+  background-color: #191919;
+  opacity: 1;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  z-index: 1;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.btn.btn-w, .btn.btn-c, .btn.btn-b {
+  transition: all 0.3s ease-in-out;
+}
+.btn.btn-w {
+  background-color: #ffffff;
+  border-color: #191919;
+}
+.btn.btn-w:hover, .btn.btn-w:focus {
+  background-color: #191919;
+  color: #ffffff;
+}
+.btn.btn-bg {
+  background-color: #f0efe9;
+  border-color: #191919;
+}
+.btn.btn-bg:hover, .btn.btn-bg:focus {
+  background-color: #191919;
+  color: #ffffff;
+}
+.btn.btn-c {
+  background-color: #f9d783;
+  border-color: #f9d783;
+}
+.btn.btn-c:hover, .btn.btn-c:focus {
+  background-color: #191919;
+  border-color: #191919;
+  color: #ffffff;
+}
+.btn.btn-b {
+  background-color: #191919;
+  border-color: #191919;
+  color: #f0efe9;
+}
+.btn.btn-b:hover, .btn.btn-b:focus {
+  background-color: transparent;
+  color: #191919;
+}
+.btn::after {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  margin-left: 0.5rem;
+  font: var(--fa-font-solid);
+  content: "\e09f";
+}
+
 /* GLOBAL */
 :root {
   font-size: 16px;
@@ -207,24 +225,6 @@ a {
 .btn-round:hover i, .btn-round:focus i {
   background-color: #191919;
   color: #ffffff;
-}
-
-/* Dots */
-.dots {
-  gap: 1.75rem;
-  margin-bottom: 2rem;
-}
-.dots .dot {
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
-  background-color: #84848a;
-  opacity: 0.5;
-  cursor: pointer;
-}
-.dots .dot.active, .dots .dot:hover {
-  background-color: #191919;
-  opacity: 1;
 }
 
 /* Social buttons */
@@ -852,34 +852,6 @@ section.about .container .row .right .btngroup a.btn-round {
     padding: 0 2rem;
   }
 }
-section.articles-news {
-  background-color: #ffffff;
-}
-section.articles-news .top {
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-/* MEDIA QUERIES */
-@media (max-width: 1520px) {
-  /* SECTION ARTICLES-NEWS 1520 */
-  section.articles-news .top {
-    flex-direction: column;
-    align-items: start;
-  }
-  section.articles-news .top .btngroup {
-    padding-top: 3rem;
-  }
-}
-@media (max-width: 768px) {
-  /* SECTION ARTICLES-NEWS 768 */
-}
-@media (max-width: 576px) {
-  /* SECTION ARTICLES-NEWS 576 */
-  section.articles-news .container .top .btngroup {
-    padding: 1rem 0;
-  }
-}
 section.contact-hero {
   position: relative;
 }
@@ -1011,6 +983,34 @@ section.features .container .box .col .grid div h3 {
     grid-template-columns: 100%;
     grid-template-rows: auto;
     gap: 2rem 0;
+  }
+}
+section.articles-news {
+  background-color: #ffffff;
+}
+section.articles-news .top {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1520px) {
+  /* SECTION ARTICLES-NEWS 1520 */
+  section.articles-news .top {
+    flex-direction: column;
+    align-items: start;
+  }
+  section.articles-news .top .btngroup {
+    padding-top: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  /* SECTION ARTICLES-NEWS 768 */
+}
+@media (max-width: 576px) {
+  /* SECTION ARTICLES-NEWS 576 */
+  section.articles-news .container .top .btngroup {
+    padding: 1rem 0;
   }
 }
 section.hero {
@@ -1685,29 +1685,29 @@ section.contact-form .container form fieldset button {
 
 @media (max-width: 1520px) {
   /* SECTION FORM 1520 */
-  .contact-page section.form .container #contact-form fieldset legend {
+  section.contact-form .container #contact-form fieldset legend {
     width: 50%;
   }
 }
 @media (max-width: 992px) {
   /* SECTION FORM 992 */
-  .contact-page section.form .container #contact-form fieldset legend {
+  section.contact-form .container #contact-form fieldset legend {
     width: 75%;
   }
 }
 @media (max-width: 768px) {
   /* SECTION FORM 768 */
-  .contact-page section.form .container #contact-form {
+  section.contact-form .container #contact-form {
     padding: 3rem 0;
   }
-  .contact-page section.form .container #contact-form fieldset legend {
+  section.contact-form .container #contact-form fieldset legend {
     text-align: center;
     width: 100%;
   }
 }
 @media (max-width: 576px) {
   /* SECTION FORM 576 */
-  .contact-page section.form {
+  section.contact-form.form {
     padding-bottom: 3rem;
   }
 }/*# sourceMappingURL=global.css.map */
