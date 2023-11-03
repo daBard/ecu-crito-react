@@ -5,6 +5,7 @@
 @import './colors';
 @import './mixins';
 @import '../components/utilities/button/button';
+@import '../components/utilities/articleGrid/articleGrid';
 
 $font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $headings-font: "DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -319,4 +320,5 @@ form {
 @import '../components/sections-info/whyUs/whyUs';
 @import '../components/sections-input/newsletter/newsletter';
 @import '../components/sections-input/contactForm/contactForm';
+@import '../components/sections-info/overviewNews/overviewNews.scss';
 

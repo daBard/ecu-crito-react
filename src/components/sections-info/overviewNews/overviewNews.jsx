@@ -1,29 +1,19 @@
-import React, { useState, useEffect } from 'react'
-//import { getData } from '../../../helper/api'
+import React from 'react'
+import ArticleGrid from '../../utilities/articleGrid/articleGrid'
 
 const overviewNews = () => {
-    const [articles, setArticles] = useState([{}]);
-    
-    useEffect(() => {
-        getArticles()
-    }, [])
-
-    async function getArticles() {
-        const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
-        const data = await result.json()
-        console.log(data)
-        setArticles(data)
-    }
+    const shownArticles = null //null = all
+    const maxArticles = null
 
     return (
-        <>
-            <div>
-                {articles.map(article => (
-                <div key={article.id}>{article.title}</div>
-                ))}
+    <section className='overview-news'>
+            <div className='container'>
+                <ArticleGrid 
+                    shownArticles={shownArticles} maxArticles={maxArticles}
+                />
             </div>
-        </>
-    )
+        </section>
+  )
 }
 
 export default overviewNews

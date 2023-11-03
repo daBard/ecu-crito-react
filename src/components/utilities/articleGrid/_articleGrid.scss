@@ -1,0 +1,115 @@
+@import '../../../css/mixins';
+
+.article-grid.cards {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    
+    a.card {
+        width: 100%;
+        border: none;
+
+        .image-wrapper {
+            position: relative;
+
+            img {
+                width: 100%;
+                max-height: 280px;
+                object-fit: cover;
+                aspect-ratio: 3 / 2;
+            }
+
+            .date-box {
+                height: 5rem;
+                width: 5rem;
+                background-color: $prim-color;
+                
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                p.date, p.month {
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.05;
+                }
+
+                .date {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                }
+            }
+
+        }
+        
+        .text {
+            margin-top: 2rem;
+            padding: 0 1rem;
+        }  
+
+        .line {
+            margin: auto auto 0 auto;
+            width: 0%;
+            height: 3px;
+            background-color: $prim-color;
+        }
+
+        &, & > * {
+            @include default-transition()
+        }
+
+        &:hover, &:focus {
+            .text h3 {
+                text-decoration: underline;
+            }
+
+            .line {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1520px) {
+    .article-grid.cards {
+
+        .card {
+
+            
+
+            &:first-child {
+                flex-basis: 100%;
+                
+                .image-wrapper img {
+                    max-height: 100%;
+                }
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) { 
+    .article-grid.cards {
+        grid-template-columns: 1fr;
+
+        .card {
+ 
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .article-grid.cards {
+        .card {
+  
+        }
+    }
+}

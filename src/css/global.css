@@ -57,6 +57,81 @@
   content: "\e09f";
 }
 
+.article-grid.cards {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.article-grid.cards a.card {
+  width: 100%;
+  border: none;
+}
+.article-grid.cards a.card .image-wrapper {
+  position: relative;
+}
+.article-grid.cards a.card .image-wrapper img {
+  width: 100%;
+  max-height: 280px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 3/2;
+}
+.article-grid.cards a.card .image-wrapper .date-box {
+  height: 5rem;
+  width: 5rem;
+  background-color: #f9d783;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.article-grid.cards a.card .image-wrapper .date-box p.date, .article-grid.cards a.card .image-wrapper .date-box p.month {
+  margin: 0;
+  padding: 0;
+  line-height: 1.05;
+}
+.article-grid.cards a.card .image-wrapper .date-box .date {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.article-grid.cards a.card .text {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+.article-grid.cards a.card .line {
+  margin: auto auto 0 auto;
+  width: 0%;
+  height: 3px;
+  background-color: #f9d783;
+}
+.article-grid.cards a.card, .article-grid.cards a.card > * {
+  transition: all 0.3s ease-in-out;
+}
+.article-grid.cards a.card:hover .text h3, .article-grid.cards a.card:focus .text h3 {
+  text-decoration: underline;
+}
+.article-grid.cards a.card:hover .line, .article-grid.cards a.card:focus .line {
+  width: 100%;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1520px) {
+  .article-grid.cards .card:first-child {
+    flex-basis: 100%;
+  }
+  .article-grid.cards .card:first-child .image-wrapper img {
+    max-height: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .article-grid.cards {
+    grid-template-columns: 1fr;
+  }
+}
 /* GLOBAL */
 :root {
   font-size: 16px;
@@ -212,8 +287,14 @@ form fieldset label input:required:valid + .icon::after, form fieldset label tex
   content: "\f058";
   color: green;
 }
+form fieldset label input::-moz-placeholder, form fieldset label textarea::-moz-placeholder {
+  color: #84848a;
+}
 form fieldset label input::placeholder, form fieldset label textarea::placeholder {
   color: #84848a;
+}
+form fieldset label input:focus::-moz-placeholder, form fieldset label textarea:focus::-moz-placeholder {
+  color: transparent;
 }
 form fieldset label input:focus::placeholder, form fieldset label textarea:focus::placeholder {
   color: transparent;
@@ -397,7 +478,8 @@ footer section.top .lines {
 footer section.top .container {
   display: grid;
   grid-template-areas: "f-1 f-1 f-2 f-3 f-4 f-5";
-  column-gap: 7rem;
+  -moz-column-gap: 7rem;
+       column-gap: 7rem;
 }
 footer section.top .f {
   display: flex;
@@ -498,7 +580,6 @@ footer section.bottom .social a {
 @media (max-width: 992px) {
   /* HEADER 992 */
   header {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -552,7 +633,8 @@ footer section.bottom .social a {
   header #navbarNav .nav {
     grid-template-areas: "navi" "login" "line" "contact" "social";
     row-gap: 0rem;
-    column-gap: 0rem;
+    -moz-column-gap: 0rem;
+         column-gap: 0rem;
   }
   header #navbarNav .nav .contact {
     width: 100%;
@@ -623,7 +705,8 @@ footer section.bottom .social a {
   header #navbarNav .nav {
     grid-template-areas: "navi" "login" "line" "contact" "social";
     row-gap: 0rem;
-    column-gap: 0rem;
+    -moz-column-gap: 0rem;
+         column-gap: 0rem;
   }
   header #navbarNav .nav .contact {
     width: 100%;
@@ -696,7 +779,8 @@ section.about .container .row .left {
 section.about .container .row .left .image-wrapper .image {
   height: 700px;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   padding-left: 3rem;
 }
 section.about .container .row .left .image-wrapper .lines {
@@ -775,61 +859,6 @@ section.articles-news .top {
   justify-content: space-between;
   align-items: flex-end;
 }
-section.articles-news .cards {
-  padding: 3rem 0;
-  gap: 2rem;
-}
-section.articles-news .cards a.card {
-  flex: 1;
-  border: none;
-}
-section.articles-news .cards a.card .image-wrapper {
-  position: relative;
-}
-section.articles-news .cards a.card .image-wrapper img {
-  width: 100%;
-  max-height: 280px;
-  object-fit: fill;
-}
-section.articles-news .cards a.card .image-wrapper .date-box {
-  height: 5rem;
-  width: 5rem;
-  background-color: #f9d783;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-section.articles-news .cards a.card .image-wrapper .date-box p.date, section.articles-news .cards a.card .image-wrapper .date-box p.month {
-  margin: 0;
-  padding: 0;
-  line-height: 1.05;
-}
-section.articles-news .cards a.card .image-wrapper .date-box .date {
-  font-size: 1.75rem;
-  font-weight: 700;
-}
-section.articles-news .cards a.card .text {
-  margin-top: 2rem;
-}
-section.articles-news .cards a.card .line {
-  margin: 0 auto;
-  width: 0%;
-  height: 3px;
-  background-color: #f9d783;
-}
-section.articles-news .cards a.card, section.articles-news .cards a.card > * {
-  transition: all 0.3s ease-in-out;
-}
-section.articles-news .cards a.card:hover .text h3, section.articles-news .cards a.card:focus .text h3 {
-  text-decoration: underline;
-}
-section.articles-news .cards a.card:hover .line, section.articles-news .cards a.card:focus .line {
-  width: 100%;
-}
 
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
@@ -841,39 +870,14 @@ section.articles-news .cards a.card:hover .line, section.articles-news .cards a.
   section.articles-news .top .btngroup {
     padding-top: 3rem;
   }
-  section.articles-news .cards {
-    flex-wrap: wrap;
-  }
-  section.articles-news .cards .card {
-    flex-basis: 45%;
-  }
-  section.articles-news .cards .card .image-wrapper img {
-    object-fit: cover;
-    aspect-ratio: 3/2;
-  }
-  section.articles-news .cards .card:first-child {
-    flex-basis: 100%;
-  }
-  section.articles-news .cards .card:first-child .image-wrapper img {
-    max-height: 100%;
-  }
 }
 @media (max-width: 768px) {
   /* SECTION ARTICLES-NEWS 768 */
-  section.articles-news .container .cards {
-    gap: 2rem 0;
-  }
-  section.articles-news .container .cards .card {
-    flex-basis: 100%;
-  }
 }
 @media (max-width: 576px) {
   /* SECTION ARTICLES-NEWS 576 */
   section.articles-news .container .top .btngroup {
     padding: 1rem 0;
-  }
-  section.articles-news .container .cards .card {
-    flex-basis: 100%;
   }
 }
 section.contact-hero {
@@ -1171,7 +1175,8 @@ section.project-case .objects a.object *, section.project-case .objects a.object
 section.project-case .objects a.object img {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 section.project-case .objects a.object h3 {
@@ -1292,6 +1297,7 @@ section.service .cards .card.flipped:hover i, section.service .cards .card.flipp
   color: #ffffff;
 }
 section.service .btngroup .btn {
+  width: -moz-fit-content;
   width: fit-content;
 }
 section.service .lines {
@@ -1337,7 +1343,8 @@ section.team .cards .card {
 }
 section.team .cards .card img {
   height: 460px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section.team .cards .card .text {
   margin-top: 2rem;
@@ -1369,7 +1376,8 @@ section.team .cards .card .text {
   }
   section.team .container .cards .card img {
     height: 345px;
-    object-position: auto 20%;
+    -o-object-position: auto 20%;
+       object-position: auto 20%;
   }
 }
 section.testimonials {
@@ -1405,7 +1413,8 @@ section.testimonials .container .cards .card .person img {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section.testimonials .container .cards .card .person .text h3, section.testimonials .container .cards .card .person .text p {
   margin: 0;
@@ -1534,7 +1543,8 @@ section.why-us .right .image-wrapper img {
   width: 700px;
   height: 550px;
   float: right;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: relative;
   z-index: 5;
 }
@@ -1700,4 +1710,4 @@ section.contact-form .container form fieldset button {
   .contact-page section.form {
     padding-bottom: 3rem;
   }
-}
+}/*# sourceMappingURL=global.css.map */
