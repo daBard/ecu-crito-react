@@ -24,17 +24,16 @@ const articleNews = () => {
     }
 
     return (
-        <Dots />
-        // <section className='w-100 article-news'>
-        //     <div className='container'>
-        //       <img src={article.imageUrl} />
-        //       <h1>{article.title}</h1>
-        //       <p>{article.content}</p>
-        //       <p>{article.author}</p>
-        //       <p>{article.published}</p>
-        //       <p>{article.category}</p>
-        // </div>
-        // </section>
+        <section className='w-100 article-news'>
+            <div className='container'>
+              <img src={article.imageUrl} />
+              <h1>{article.title}</h1>
+              <p>{article.content}</p>
+              <p>{article.author}</p>
+              <p>{article.published}</p>
+              <p>{article.category}</p>
+        </div>
+        </section>
     )
 }
 

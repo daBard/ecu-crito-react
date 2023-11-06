@@ -17,8 +17,7 @@
 .article-grid.cards a.card .image-wrapper img {
   width: 100%;
   max-height: 280px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 3/2;
 }
 .article-grid.cards a.card .image-wrapper .date-box {
@@ -63,14 +62,6 @@
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 1520px) {
-  .article-grid.cards .card:first-child {
-    flex-basis: 100%;
-  }
-  .article-grid.cards .card:first-child .image-wrapper img {
-    max-height: 100%;
-  }
-}
 @media (max-width: 768px) {
   .article-grid.cards {
     grid-template-columns: 1fr;
@@ -287,14 +278,8 @@ form fieldset label input:required:valid + .icon::after, form fieldset label tex
   content: "\f058";
   color: green;
 }
-form fieldset label input::-moz-placeholder, form fieldset label textarea::-moz-placeholder {
-  color: #84848a;
-}
 form fieldset label input::placeholder, form fieldset label textarea::placeholder {
   color: #84848a;
-}
-form fieldset label input:focus::-moz-placeholder, form fieldset label textarea:focus::-moz-placeholder {
-  color: transparent;
 }
 form fieldset label input:focus::placeholder, form fieldset label textarea:focus::placeholder {
   color: transparent;
@@ -478,8 +463,7 @@ footer section.top .lines {
 footer section.top .container {
   display: grid;
   grid-template-areas: "f-1 f-1 f-2 f-3 f-4 f-5";
-  -moz-column-gap: 7rem;
-       column-gap: 7rem;
+  column-gap: 7rem;
 }
 footer section.top .f {
   display: flex;
@@ -580,6 +564,7 @@ footer section.bottom .social a {
 @media (max-width: 992px) {
   /* HEADER 992 */
   header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -633,8 +618,7 @@ footer section.bottom .social a {
   header #navbarNav .nav {
     grid-template-areas: "navi" "login" "line" "contact" "social";
     row-gap: 0rem;
-    -moz-column-gap: 0rem;
-         column-gap: 0rem;
+    column-gap: 0rem;
   }
   header #navbarNav .nav .contact {
     width: 100%;
@@ -705,8 +689,7 @@ footer section.bottom .social a {
   header #navbarNav .nav {
     grid-template-areas: "navi" "login" "line" "contact" "social";
     row-gap: 0rem;
-    -moz-column-gap: 0rem;
-         column-gap: 0rem;
+    column-gap: 0rem;
   }
   header #navbarNav .nav .contact {
     width: 100%;
@@ -779,8 +762,7 @@ section.about .container .row .left {
 section.about .container .row .left .image-wrapper .image {
   height: 700px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   padding-left: 3rem;
 }
 section.about .container .row .left .image-wrapper .lines {
@@ -1175,8 +1157,7 @@ section.project-case .objects a.object *, section.project-case .objects a.object
 section.project-case .objects a.object img {
   width: 100%;
   height: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 section.project-case .objects a.object h3 {
@@ -1297,7 +1278,6 @@ section.service .cards .card.flipped:hover i, section.service .cards .card.flipp
   color: #ffffff;
 }
 section.service .btngroup .btn {
-  width: -moz-fit-content;
   width: fit-content;
 }
 section.service .lines {
@@ -1343,8 +1323,7 @@ section.team .cards .card {
 }
 section.team .cards .card img {
   height: 460px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 section.team .cards .card .text {
   margin-top: 2rem;
@@ -1376,8 +1355,7 @@ section.team .cards .card .text {
   }
   section.team .container .cards .card img {
     height: 345px;
-    -o-object-position: auto 20%;
-       object-position: auto 20%;
+    object-position: auto 20%;
   }
 }
 section.testimonials {
@@ -1413,8 +1391,7 @@ section.testimonials .container .cards .card .person img {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 section.testimonials .container .cards .card .person .text h3, section.testimonials .container .cards .card .person .text p {
   margin: 0;
@@ -1543,8 +1520,7 @@ section.why-us .right .image-wrapper img {
   width: 700px;
   height: 550px;
   float: right;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: relative;
   z-index: 5;
 }

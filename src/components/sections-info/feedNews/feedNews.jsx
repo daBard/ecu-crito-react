@@ -20,17 +20,8 @@ const feedNews = ({}) => {
                     </div>
                 </div>
                 <ArticleGrid 
-                    // shownArticles={shownArticles} maxArticles={maxArticles}
+                    _shownArticles={shownArticles} _maxArticles={maxArticles}
                 />
-                
-
-                {/* <div className="dots d-flex justify-content-center">
-                    <div className="dot active"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                </div> */}
             </div>
         </section>
     )

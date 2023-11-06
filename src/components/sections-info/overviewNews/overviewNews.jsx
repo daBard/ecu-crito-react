@@ -2,14 +2,14 @@ import React from 'react'
 import ArticleGrid from '../../utilities/articleGrid/articleGrid'
 
 const overviewNews = () => {
-    const shownArticles = 3 //null = all
-    const maxArticles = 12
+    const shownArticles = 9 
+    const maxArticles = null //null = all
 
     return (
     <section className='overview-news'>
             <div className='container'>
                 <ArticleGrid 
-                    // shownArticles={shownArticles} maxArticles={maxArticles}
+                    _shownArticles={shownArticles} _maxArticles={maxArticles}
                 />
             </div>
         </section>

@@ -1,32 +1,66 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import Dots from'../dots/dots'
+//import Dots from'../dots/dots'
+import { getData as helper_getData } from '../../../helper/api'
 
 
-const articleGrid = ({shownArticles = 3, maxArticles = 7}) => {
+const articleGrid = ({_shownArticles = 3, _maxArticles = null}) => {
+    const [apiData, setApiData] = useState()
+    const [shownArticles, setShownArticles] = useState(_shownArticles)
+    const [maxArticles, setMaxArticles] = useState(_maxArticles)
     const [articles, setArticles] = useState([{}])
-    const [dotElements, setDotElements] = useState()
-    //const [nDots, setNDots] = useState(Math.ceil(maxArticles / shownArticles))
-    const [currentDot, setCurrentDot] = useState()
+    const [dotElements, setDotElements] = useState([])
+    const [activeDot, setActiveDot] = useState()
+
     const monthName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
     useEffect(() => {
-        displayArticles()
-    }, [])
-  
-    useEffect(() => {
-        let nDots = Math.ceil(maxArticles / shownArticles)
-        let elements = Array.from({ length: nDots }, (_, index) => (
-            <div key={index} data-dot={index} className="dot"></div>
-        ))
+        async function getApiData() {
+            const data = await helper_getData()
+            setApiData(data)
 
-    setDotElements(elements)
-    }, [shownArticles, maxArticles])
+            if (maxArticles === null || data.length <= maxArticles) { setMaxArticles(data.length) }
+            console.log(maxArticles)
+            if (shownArticles === 0) { setShownArticles(maxArticles) }
+            console.log(shownArticles)
+
+            setActiveDot(0)
+        } 
+        
+        getApiData()        
+    }, [])
+
+    useEffect(() => {
+        setDotElements(makeDots())
+        displayArticles()
+    }, [activeDot])
     
+    const makeDots = () => {
+        let elements = []
+
+        if (maxArticles > shownArticles) {
+            let nDots = Math.ceil(maxArticles / shownArticles)
+
+            elements = Array.from({ length: nDots }, (_, index) => (
+                <div onClick={() => {
+                    dotActive(index)
+                    }} 
+                key={index} 
+                className={ activeDot == index ? "dot active" : "dot" }>
+                </div>
+            ))
+        }
+        
+        return elements
+    }
+
+    function dotActive(dotI) {
+        setActiveDot(dotI)
+    }
 
     const displayArticles = async () => {
-        let data = await getData()
+        let data =  apiData
         data = await cutMaxData(data)
         let newData = await cutData(data)
         newData = await changeDate(newData)
@@ -34,21 +68,26 @@ const articleGrid = ({shownArticles = 3, maxArticles = 7}) => {
         setArticles(newData)
     }
 
-    async function getData() {
-        const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
-        return (await result.json())
+    const cutMaxData = async (_data) => {
+        if (maxArticles != null) {
+            return await _data.slice(0, maxArticles)
+        }
+        else {
+            return _data
+        }
+    
     }
 
-    const cutMaxData = (data) => {
-        if (maxArticles != null)
-            data = data.slice(0, shownArticles)
-        return(data)
-    }
-
-    const cutData = (data) => {
-        if (shownArticles != null)
-            data = data.slice(0, shownArticles)
-        return(data)
+    const cutData = async (_data) => {
+        if (shownArticles != null) {
+            const start = activeDot * shownArticles
+            const end = start + shownArticles
+            return await _data.slice(start, end)
+        }
+        else {
+            return _data
+        }
+        
     }
 
     const changeDate = async (data) =>  {

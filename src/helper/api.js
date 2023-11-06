@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+const apiUrl = 'https://win23-assignment.azurewebsites.net/api'
 
 export async function getData() {
-    const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
+    const result = await fetch(`${apiUrl}/articles`)
     const data = await result.json()
     return data
 }

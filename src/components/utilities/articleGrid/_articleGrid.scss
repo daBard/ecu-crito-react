@@ -79,19 +79,6 @@
 @media (max-width: 1520px) {
     .article-grid.cards {
 
-        .card {
-
-            
-
-            &:first-child {
-                flex-basis: 100%;
-                
-                .image-wrapper img {
-                    max-height: 100%;
-                }
-                
-            }
-        }
     }
 }
 
