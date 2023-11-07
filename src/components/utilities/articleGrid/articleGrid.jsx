@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { getData as helper_getData } from '../../../helper/api'
 
 
-const articleGrid = ({_shownArticles = 3, _maxArticles = null}) => {
+const articleGrid = ({_shownArticles = 3, _maxArticles = null }) => {
     const [apiData, setApiData] = useState()
     const [shownArticles, setShownArticles] = useState(_shownArticles)
     const [maxArticles, setMaxArticles] = useState(_maxArticles)
@@ -60,8 +60,7 @@ const articleGrid = ({_shownArticles = 3, _maxArticles = null}) => {
     }
 
     const displayArticles = async () => {
-        let data =  apiData
-        data = await cutMaxData(data)
+        let data = await cutMaxData(apiData)
         let newData = await cutData(data)
         newData = await changeDate(newData)
 
@@ -69,7 +68,7 @@ const articleGrid = ({_shownArticles = 3, _maxArticles = null}) => {
     }
 
     const cutMaxData = async (_data) => {
-        if (maxArticles != null) {
+        if (maxArticles !== null) {
             return await _data.slice(0, maxArticles)
         }
         else {
