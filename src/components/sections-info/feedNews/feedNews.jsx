@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ArticleGrid from '../../utilities/articleGrid/articleGrid'
 
-const feedNews = ({}) => {
+const feedNews = ({ _bgColor= '$bg-white' }) => {
 
     const shownArticles = 3
     const maxArticles = 12
 
     return (
-        <section className="articles-news">
+        <section className="articles-news" style={{backgroundColor: `${_bgColor}`}}>
             <div className="container">
                 <div className="top d-flex">
                     <div className="text">

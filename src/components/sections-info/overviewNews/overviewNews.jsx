@@ -8,11 +8,12 @@ const overviewNews = () => {
     return (
     <section className='overview-news'>
             <div className='container'>
+                <h2>Our news & articles</h2>
                 <ArticleGrid 
                     _shownArticles={shownArticles} _maxArticles={maxArticles}
                 />
-            </div>
-        </section>
+        </div>
+    </section>
   )
 }
 

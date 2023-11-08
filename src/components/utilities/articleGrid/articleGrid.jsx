@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-//import Dots from'../dots/dots'
 import { getData as helper_getData } from '../../../helper/api'
 
 
@@ -21,9 +20,7 @@ const articleGrid = ({_shownArticles = 3, _maxArticles = null }) => {
             setApiData(data)
 
             if (maxArticles === null || data.length <= maxArticles) { setMaxArticles(data.length) }
-            console.log(maxArticles)
             if (shownArticles === 0) { setShownArticles(maxArticles) }
-            console.log(shownArticles)
 
             setActiveDot(0)
         } 

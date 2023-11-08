@@ -290,7 +290,7 @@ form {
 @import '../components/header-footer/header-footer';
 
 @import '../components/sections-info/about/about';
-@import '../components/sections-info/contactHero/contactHero';
+@import '../components/sections-info/smallHero/smallHero';
 @import '../components/sections-info/contactInformation/contactInformation';
 @import '../components/sections-info/features/features';
 @import '../components/sections-info/feedNews/feedNews';
@@ -302,7 +302,8 @@ form {
 @import '../components/sections-info/team/team';
 @import '../components/sections-info/testimonials/testimonials';
 @import '../components/sections-info/whyUs/whyUs';
-@import '../components/sections-info/overviewNews/overviewNews.scss';
+@import '../components/sections-info/overviewNews/overviewNews';
+@import '../components/sections-info/articleNews/articleNews';
 
 @import '../components/sections-input/newsletter/newsletter';
 @import '../components/sections-input/contactForm/contactForm';

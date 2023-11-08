@@ -6,7 +6,8 @@ export async function getData() {
     return data
 }
 
-export function other() {
-    console.log('Din mamma')
-    return "Ditt blåbär"
+export async function getDataById(_id) {
+    const result = await fetch(`${apiUrl}/articles/${_id}`)
+    const data = await result.json()
+    return data
 }

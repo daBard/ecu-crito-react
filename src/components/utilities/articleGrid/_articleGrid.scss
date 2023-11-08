@@ -1,7 +1,7 @@
 @import '../../../css/mixins';
 
 .article-grid.cards {
-    padding: 3rem 0;
+    padding: 2rem 0 3rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;

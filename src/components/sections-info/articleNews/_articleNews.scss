@@ -1,0 +1,126 @@
+
+section.article-news {
+    padding: 5rem 0 3rem 0;
+    background-color: $bg-white;
+
+    .container {
+        .article-header {
+            max-width: 66.66%;
+
+            .article-header-info {
+                display: flex;
+                gap: 1.5rem;
+                font-weight: 600;
+
+                .dot {
+                    min-height: .5rem;
+                    min-width: .5rem;
+                    margin: .5rem 0 auto 0;
+                    background-color: $prim-color;
+                    border-radius: 25px;
+                }
+            }
+        }
+
+        .article-main {
+            display: flex;
+            flex: 2 1;
+            gap: 7.5rem;
+
+            article {
+                p {
+                    margin-top: 3rem;
+                }
+
+                .btn-grp {
+                    margin-top: 2em;
+                    display: flex;
+                    gap: 1rem;
+
+                    div {
+                        min-width: 6rem;
+                        padding: .5rem 1rem;
+                        background-color: $bg-color;
+                        border-radius: 25px;
+                        text-align: center;
+                        font-weight: 600;
+                        cursor: pointer;
+                        @include default-transition;
+
+                        &:hover {
+                            background-color: $text-color-prim;
+                            color: $bg-color;
+                        }
+                    }
+                }
+            }
+
+            .sidebar {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+
+                .search-field {
+                    display: flex;
+                    gap: .8rem;
+                    align-items: center;
+                    background-color: $bg-color;
+                    padding: 1rem 2rem;
+                    border-radius: 25px;
+            
+                    input#news-search {
+                    
+                        &::placeholder {
+                            color: $text-color-sec;
+                        }
+        
+                        &:focus::placeholder {
+                        color: transparent;
+                        }
+                    }
+                }
+            
+                .recent-posts, .categories {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    border: 1px solid $bg-color;
+                    padding: 2rem;
+                
+                    h3 {
+                        font-size: 1.25rem;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 2rem;
+                            border-bottom: 1px solid $text-color-prim;
+                        }
+                    }
+
+                    h4 {
+                        font-size: 1.1rem;
+                    }
+
+                    p, div {
+                        color: $text-color-sec;
+                    }
+                }
+
+                .recent-posts .line {
+                    height: 1px;
+                    width: 100%;
+                    background-color: $bg-color;
+                    margin: 1rem 0;
+                }
+
+                .categories div {
+                    font-weight: 600;
+                       span {            
+                        color: $text-color-prim;
+                    }
+                }
+            }
+        }
+    }
+}
