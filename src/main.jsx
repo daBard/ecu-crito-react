@@ -12,18 +12,24 @@ import Contact from './views/Contact'
 import News from './views/News'
 import NewsDetails from './views/NewsDetails'
 import NotFound from './views/NotFound'
+import AutoScrollToTop from './components/utilities/autoScrollToTop/AutoScrollToTop'
+import Header from './components/header-footer/Header'
+import Footer from './components/header-footer/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/news' element={<News />} />
-        <Route path='/news/details/:id' element={<NewsDetails />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-    </Router>
+      <Router>
+        <AutoScrollToTop />
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/news' element={<News />} />
+          <Route path='/news/details/:id' element={<NewsDetails />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Router>
   </React.StrictMode>
 )

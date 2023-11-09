@@ -1,22 +1,12 @@
 import React from 'react'
 
-import Header from '../components/header-footer/header'
-import Footer from '../components/header-footer/footer'
-
-const divStyle = {
-    padding: '20dvh 16.65dvw'
-}
+import NotFoundSection from '../components/sections-info/notFoundSection/NotFoundSection'
 
 const NotFound = () => {
   return (
-    <>
-    <Header />
-    <div className="w-100" style={divStyle}>
-        <h1>Oops... this page does not exist.</h1>
-        <p>Error - 404 Page Not Found</p>
-    </div>
-    <Footer />
-    </>
+    <main className="w-100">
+        <NotFoundSection />
+    </main>
   )
 }
 

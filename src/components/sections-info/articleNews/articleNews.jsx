@@ -11,7 +11,7 @@ const articleNews = () => {
 
     useEffect(() => {
         displayArticle()
-    }, [])
+    }, [id])
 
 
     const displayArticle = async () => {
@@ -70,14 +70,20 @@ const articleNews = () => {
                     <div className='recent-posts'>
                         <h3>Recent posts</h3>
                         <div>
-                            <h4>This is a text</h4>
-                            <div>MMM, DD, YYYY</div>
+                            <div>
+                                <h4>This is a text</h4>
+                                <p>MMM, DD, YYYY</p>
+                            </div>
                             <div className='line'></div>
-                            <h4>This is a text</h4>
-                            <div>MMM, DD, YYYY</div>
+                            <div>
+                                <h4>This is a text</h4>
+                                <p>MMM, DD, YYYY</p>
+                            </div>
                             <div className='line'></div>
-                            <h4>This is a text</h4>
-                            <div>MMM, DD, YYYY</div>
+                            <div>
+                                <h4>This is a text</h4>
+                                <p>MMM, DD, YYYY</p>
+                            </div>
                         </div>
                     </div>
                     <div className='categories'>

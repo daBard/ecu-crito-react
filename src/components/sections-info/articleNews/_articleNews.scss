@@ -35,6 +35,7 @@ section.article-news {
                 .btn-grp {
                     margin-top: 2em;
                     display: flex;
+                    flex-wrap: wrap;
                     gap: 1rem;
 
                     div {
@@ -98,29 +99,82 @@ section.article-news {
                         }
                     }
 
-                    h4 {
-                        font-size: 1.1rem;
-                    }
-
                     p, div {
                         color: $text-color-sec;
                     }
                 }
 
-                .recent-posts .line {
-                    height: 1px;
-                    width: 100%;
-                    background-color: $bg-color;
-                    margin: 1rem 0;
+                .recent-posts {
+                
+                    div div {
+                        cursor: pointer;
+
+                        h4 {
+                            font-size: 1.1rem;
+                        }
+
+                        &:hover {
+                            h4, p {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    
+
+                    .line {
+                        height: 1px;
+                        width: 100%;
+                        background-color: $bg-color;
+                        margin: 1rem 0;
+                   }
                 }
 
                 .categories div {
                     font-weight: 600;
+                    cursor: pointer;
                        span {            
                         color: $text-color-prim;
                     }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1520px) {
+    section.article-news .container {
+            .article-header {
+                max-width: 100%; 
+            }
+    
+            .article-main {
+                flex: auto;
+                gap: 0;
+
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                    
+                }
+
+                .sidebar {
+                    display: none;
+                }
+            }
+    }
+}
+
+@media (max-width: 576px) { 
+    section.article-news .container {
+        .article-header .article-header-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
     }
 }

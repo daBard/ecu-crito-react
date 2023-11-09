@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Header from '../components/header-footer/header'
-import Footer from '../components/header-footer/footer'
 import Hero from '../components/sections-info/hero/hero'
 import LogoBar from '../components/sections-info/logoBar/logoBar'
 import Features from '../components/sections-info/features/features'
@@ -16,8 +14,6 @@ import Newsletter from '../components/sections-input/newsletter/newsletter'
 
 const Home = () => {
   return (
-    <>
-      <Header />
       <main className="w-100">
         <Hero />
         <LogoBar />
@@ -31,8 +27,6 @@ const Home = () => {
         <ArticlesNews />
         <Newsletter />
       </main>
-      <Footer />
-    </>
   )
 }
 

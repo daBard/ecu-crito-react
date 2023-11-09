@@ -1,0 +1,10 @@
+section.not-found {
+    background-color: $bg-white;
+
+    .container {
+        padding: 5dvh 0 15dvh 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import ArticleGrid from '../../utilities/articleGrid/articleGrid'
+import ArticleGrid from '../../utilities/articleGrid/ArticleGrid'
 
 const overviewNews = () => {
     const shownArticles = 9 
