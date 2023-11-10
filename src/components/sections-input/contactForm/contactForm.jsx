@@ -1,24 +1,149 @@
-import React from 'react'
+import React, { useState } from 'react'
+//import { useFormik } from 'formik'
+
+import { useFormik } from 'formik'
+
 import Button from '../../utilities/button/Button'
 
 const contactForm = () => {
+    const nameRegex = /^[a-zA-Z\s\-\*]+$/
+    const emailRegex = new RegExp(/(([^<>()\[\]\\.,:\s@"]+(\.[^<>()\[\]\\.,:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/)
+    
+    const [nameErrorText, setNameErrorText] = useState('')
+    const [emailErrorText, setEmailErrorText] = useState('')
+    const [messageErrorText, setMessageErrorText] = useState('')
+
+    let errorArray = []
+
+    const form = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            message: ''
+        },
+        onSubmit: async () => {
+            errorArray = []
+
+            for(let inp in form.values) {
+                validationSwitch(inp)
+            }
+
+            if (!errorArray.includes(true)) {
+                postData(form.values) 
+            }
+        }
+    })
+
+    const validationSwitch = (inp) => {
+        switch(inp) {
+            case 'name':
+                if (form.values.name == '') {
+                    setNameErrorText('Name is required')
+                    errorArray.push(true)
+                }
+                else if (!nameRegex.test(form.values.name)) {
+                    setNameErrorText('Must be a valid name')
+                    errorArray.push(true)
+                }
+                break
+            case 'email':
+                if (form.values.email == '') {
+                    setEmailErrorText('Email is required')
+                    errorArray.push(true)
+                }
+                else if (!emailRegex.test(form.values.email)) {
+                    setEmailErrorText('Must be a valid email')
+                    errorArray.push(true)
+                }
+                break
+            case 'message':
+                if (form.values.message == '') {
+                    setMessageErrorText('Message is required')
+                    errorArray.push(true)
+                }
+                break
+            default:
+                console.log("You're not supposed to be here... validationSwitch error")
+                errorArray.push(true)
+                break
+        }
+    }
+
+    const postData = async (values) => {
+        const result = await fetch('https://win23-assignment.azurewebsites.net/api/contactform', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(values)
+        })
+
+        switch(true) {
+            case (result.status >= 200 && result.status <= 299):
+                console.log(`Message posted - ${result.status}`)
+                alert('Message sent')
+                break
+            case (result.status >= 400 && result.status <= 499):
+                console.log(`User error - ${result.status}`)
+                break
+            case (result.status >= 500 && result.status <= 599):
+                console.log(`Server error - ${result.status}`)
+                break
+            default:
+                console.log(`Unknown error - ${result.status}`)
+        }
+    }
+
   return (
     <section className="contact-form w-100 m-small">
         <div className="container">
-            <form action="" id="contact-form">
+            <form onSubmit={form.handleSubmit} id="contact-form" noValidate>
                 <fieldset>
                     <legend><h2>Leave us a message for any information.</h2></legend>
-                    <label for="name">
-                        <input type="text" id="name" name="name" placeholder="Name*" required />
+                    <label htmlFor="name" className={ nameErrorText != '' ? 'error shake' : ''}>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Name*" 
+                            onChange={(e) => {
+                                form.handleChange(e)
+                                setNameErrorText('')
+                                }} 
+                            value={form.values.name} 
+                        />
                         <i className="icon"></i>
+                        <div className='error-text'>{nameErrorText}</div>
                     </label>
-                    <label for="email">
-                        <input type="email" id="email" name="email" placeholder="Email*" required />
+                    <label htmlFor="email" className={ emailErrorText != '' ? 'error shake' : ''}>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Email*" 
+                            onChange={(e) => {
+                                form.handleChange(e)
+                                setEmailErrorText('')
+                            }} 
+                            value={form.values.email} 
+                        />
                         <i className="icon"></i>
+                        <div className='error-text'>{emailErrorText}</div>
                     </label>
-                    <label for="message">
-                        <textarea id="message" name="message" placeholder="Your message*" rows="4" required></textarea>
+                    <label htmlFor="message" className={ messageErrorText != '' ? 'error shake' : ''}>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Your message*" 
+                            onChange={(e) => {
+                                form.handleChange(e)
+                                setMessageErrorText('')
+                                }} 
+                            rows="4" 
+                            value={form.values.message}>
+                        </textarea>
                         <i className="icon top"></i>
+                        <div className='error-text'>{messageErrorText}</div>
                     </label>
                     <Button type="submit" form="contact-form" value="Send message" color="color" title="Send message" />
                 </fieldset>

@@ -148,31 +148,6 @@ form {
                 &:hover, &:focus {
                     border: 1px solid $text-color-prim;
                 }
-
-                &:required {
-                    border-color: transparent;
-
-                    &:hover, &:focus {
-                        &:focus:invalid {
-                            border-color: $invalid;
-
-                            & + .icon::after {
-                                content: "\f057";
-                                color: $invalid; 
-                            }
-                        }
-                    }
-
-                    &:valid {
-                        border-color: $valid;
-
-                        & + .icon::after { 
-                            content: "\f058";
-                            color: $valid; 
-                        }
-                    }
-                    
-                }
                 
                 &::placeholder {
                 color: $text-color-sec;
@@ -222,22 +197,19 @@ form {
     }
 }
 
-/* Spin-clock UNUSED
-@keyframes spin-clock {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Spin-counter-clock UNUSED
-@keyframes spin-counter-clock {
-    0% { transform: rotate(360deg); }
-    100% { transform: rotate(0deg); }
-} */
-
 /* Popping */
 @keyframes popping {
     50% { scale: 1.2; }
     100% { scale: 1; }
+}
+
+/* Horizontal shake */
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
 }
 
 /* MEDIA QUERIES */

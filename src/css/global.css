@@ -17,8 +17,7 @@
 .article-grid.cards a.card .image-wrapper img {
   width: 100%;
   max-height: 280px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 3/2;
 }
 .article-grid.cards a.card .image-wrapper .date-box {
@@ -262,31 +261,8 @@ form fieldset label input, form fieldset label textarea {
 form fieldset label input:hover, form fieldset label input:focus, form fieldset label textarea:hover, form fieldset label textarea:focus {
   border: 1px solid #191919;
 }
-form fieldset label input:required, form fieldset label textarea:required {
-  border-color: transparent;
-}
-form fieldset label input:required:hover:focus:invalid, form fieldset label input:required:focus:focus:invalid, form fieldset label textarea:required:hover:focus:invalid, form fieldset label textarea:required:focus:focus:invalid {
-  border-color: red;
-}
-form fieldset label input:required:hover:focus:invalid + .icon::after, form fieldset label input:required:focus:focus:invalid + .icon::after, form fieldset label textarea:required:hover:focus:invalid + .icon::after, form fieldset label textarea:required:focus:focus:invalid + .icon::after {
-  content: "\f057";
-  color: red;
-}
-form fieldset label input:required:valid, form fieldset label textarea:required:valid {
-  border-color: green;
-}
-form fieldset label input:required:valid + .icon::after, form fieldset label textarea:required:valid + .icon::after {
-  content: "\f058";
-  color: green;
-}
-form fieldset label input::-moz-placeholder, form fieldset label textarea::-moz-placeholder {
-  color: #84848a;
-}
 form fieldset label input::placeholder, form fieldset label textarea::placeholder {
   color: #84848a;
-}
-form fieldset label input:focus::-moz-placeholder, form fieldset label textarea:focus::-moz-placeholder {
-  color: transparent;
 }
 form fieldset label input:focus::placeholder, form fieldset label textarea:focus::placeholder {
   color: transparent;
@@ -324,17 +300,6 @@ form fieldset label .icon.top {
     scale: 1.1;
   }
 }
-/* Spin-clock UNUSED
-@keyframes spin-clock {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Spin-counter-clock UNUSED
-@keyframes spin-counter-clock {
-    0% { transform: rotate(360deg); }
-    100% { transform: rotate(0deg); }
-} */
 /* Popping */
 @keyframes popping {
   50% {
@@ -342,6 +307,24 @@ form fieldset label .icon.top {
   }
   100% {
     scale: 1;
+  }
+}
+/* Horizontal shake */
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 /* MEDIA QUERIES */
@@ -470,8 +453,7 @@ footer section.top .lines {
 footer section.top .container {
   display: grid;
   grid-template-areas: "f-1 f-1 f-2 f-3 f-4 f-5";
-  -moz-column-gap: 7rem;
-       column-gap: 7rem;
+  column-gap: 7rem;
 }
 footer section.top .f {
   display: flex;
@@ -572,6 +554,7 @@ footer section.bottom .social a {
 @media (max-width: 992px) {
   /* HEADER 992 */
   header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -625,8 +608,7 @@ footer section.bottom .social a {
   header #navbarNav .nav {
     grid-template-areas: "navi" "login" "line" "contact" "social";
     row-gap: 0rem;
-    -moz-column-gap: 0rem;
-         column-gap: 0rem;
+    column-gap: 0rem;
   }
   header #navbarNav .nav .contact {
     width: 100%;
@@ -697,8 +679,7 @@ footer section.bottom .social a {
   header #navbarNav .nav {
     grid-template-areas: "navi" "login" "line" "contact" "social";
     row-gap: 0rem;
-    -moz-column-gap: 0rem;
-         column-gap: 0rem;
+    column-gap: 0rem;
   }
   header #navbarNav .nav .contact {
     width: 100%;
@@ -771,8 +752,7 @@ section.about .container .row .left {
 section.about .container .row .left .image-wrapper .image {
   height: 700px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   padding-left: 3rem;
 }
 section.about .container .row .left .image-wrapper .lines {
@@ -1195,8 +1175,7 @@ section.project-case .objects a.object *, section.project-case .objects a.object
 section.project-case .objects a.object img {
   width: 100%;
   height: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 section.project-case .objects a.object h3 {
@@ -1317,7 +1296,6 @@ section.service .cards .card.flipped:hover i, section.service .cards .card.flipp
   color: #ffffff;
 }
 section.service .btngroup .btn {
-  width: -moz-fit-content;
   width: fit-content;
 }
 section.service .lines {
@@ -1363,8 +1341,7 @@ section.team .cards .card {
 }
 section.team .cards .card img {
   height: 460px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 section.team .cards .card .text {
   margin-top: 2rem;
@@ -1396,8 +1373,7 @@ section.team .cards .card .text {
   }
   section.team .container .cards .card img {
     height: 345px;
-    -o-object-position: auto 20%;
-       object-position: auto 20%;
+    object-position: auto 20%;
   }
 }
 section.testimonials {
@@ -1433,8 +1409,7 @@ section.testimonials .container .cards .card .person img {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 section.testimonials .container .cards .card .person .text h3, section.testimonials .container .cards .card .person .text p {
   margin: 0;
@@ -1563,8 +1538,7 @@ section.why-us .right .image-wrapper img {
   width: 700px;
   height: 550px;
   float: right;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: relative;
   z-index: 5;
 }
@@ -1645,14 +1619,8 @@ section.article-news .container .article-main .sidebar .search-field {
   padding: 1rem 2rem;
   border-radius: 25px;
 }
-section.article-news .container .article-main .sidebar .search-field input#news-search::-moz-placeholder {
-  color: #84848a;
-}
 section.article-news .container .article-main .sidebar .search-field input#news-search::placeholder {
   color: #84848a;
-}
-section.article-news .container .article-main .sidebar .search-field input#news-search:focus::-moz-placeholder {
-  color: transparent;
 }
 section.article-news .container .article-main .sidebar .search-field input#news-search:focus::placeholder {
   color: transparent;
@@ -1713,8 +1681,7 @@ section.article-news .container .article-main .sidebar .categories div:hover {
   }
   section.article-news .container .article-main img {
     width: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
   section.article-news .container .article-main .sidebar {
     display: none;
@@ -1771,6 +1738,23 @@ section.newsletter .container form fieldset .group label {
 }
 section.newsletter .container form fieldset .group label #email {
   width: 100%;
+}
+section.newsletter .container form fieldset .group label #email:required {
+  border-color: transparent;
+}
+section.newsletter .container form fieldset .group label #email:required:hover:focus:invalid, section.newsletter .container form fieldset .group label #email:required:focus:focus:invalid {
+  border-color: red;
+}
+section.newsletter .container form fieldset .group label #email:required:hover:focus:invalid + .icon::after, section.newsletter .container form fieldset .group label #email:required:focus:focus:invalid + .icon::after {
+  content: "\f057";
+  color: red;
+}
+section.newsletter .container form fieldset .group label #email:required:valid {
+  border-color: green;
+}
+section.newsletter .container form fieldset .group label #email:required:valid + .icon::after {
+  content: "\f058";
+  color: green;
 }
 section.newsletter img {
   position: absolute;
@@ -1841,7 +1825,7 @@ section.contact-form .container form {
 }
 section.contact-form .container form fieldset {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
   flex-direction: column;
   align-items: center;
 }
@@ -1854,9 +1838,43 @@ section.contact-form .container form fieldset legend h2 {
 section.contact-form .container form fieldset label, section.contact-form .container form fieldset input, section.contact-form .container form fieldset textarea, section.contact-form .container form fieldset button {
   width: 100%;
 }
+section.contact-form .container form fieldset label {
+  display: flex;
+  flex-direction: column;
+}
+section.contact-form .container form fieldset label .icon {
+  height: calc(100% - 1rem);
+}
+section.contact-form .container form fieldset label.error input::placeholder, section.contact-form .container form fieldset label.error textarea::placeholder {
+  color: red;
+}
+section.contact-form .container form fieldset label.error input, section.contact-form .container form fieldset label.error textarea {
+  border-color: red;
+  box-shadow: -1px -1px 2px inset red;
+}
+section.contact-form .container form fieldset label.error input + .icon::after, section.contact-form .container form fieldset label.error textarea + .icon::after {
+  content: "\f057";
+  color: red;
+}
+section.contact-form .container form fieldset label.error input:focus::placeholder, section.contact-form .container form fieldset label.error textarea:focus::placeholder {
+  color: transparent;
+}
+section.contact-form .container form fieldset label.shake {
+  animation: horizontal-shaking 0.3s linear 1 alternate;
+}
+section.contact-form .container form fieldset label .error-text {
+  width: 100%;
+  height: 0.8rem;
+  text-align: right;
+  padding-right: 1rem;
+  margin-top: 0.2rem;
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 section.contact-form .container form fieldset button {
   padding: 1rem 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 @media (max-width: 1520px) {
@@ -1883,7 +1901,10 @@ section.contact-form .container form fieldset button {
 }
 @media (max-width: 576px) {
   /* SECTION FORM 576 */
-  section.contact-form.form {
+  section.contact-form .container #contact-form {
     padding-bottom: 3rem;
+  }
+  section.contact-form .container #contact-form fieldset label .icon.top {
+    height: auto;
   }
 }/*# sourceMappingURL=global.css.map */

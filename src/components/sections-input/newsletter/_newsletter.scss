@@ -34,7 +34,32 @@ section.newsletter {
                     max-width: 20rem;
                     
                     #email {
-                        width: 100%;    
+                        width: 100%;
+                        
+                        &:required {
+                            border-color: transparent;
+        
+                            &:hover, &:focus {
+                                &:focus:invalid {
+                                    border-color: $invalid;
+        
+                                    & + .icon::after {
+                                        content: "\f057";
+                                        color: $invalid; 
+                                    }
+                                }
+                            }
+        
+                            &:valid {
+                                border-color: $valid;
+        
+                                & + .icon::after { 
+                                    content: "\f058";
+                                    color: $valid; 
+                                }
+                            }
+                            
+                        }
                     }
                 }
                 
