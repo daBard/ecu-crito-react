@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 //import { useFormik } from 'formik'
 
 import { useFormik } from 'formik'
@@ -15,6 +15,11 @@ const contactForm = () => {
 
     let errorArray = []
 
+
+    useEffect(() => {
+        //console.log(FormikActions)
+    }, [])
+
     const form = useFormik({
         initialValues: {
             name: '',
@@ -29,7 +34,8 @@ const contactForm = () => {
             }
 
             if (!errorArray.includes(true)) {
-                postData(form.values) 
+                //postData(form.values) 
+                
             }
         }
     })
@@ -97,7 +103,10 @@ const contactForm = () => {
   return (
     <section className="contact-form w-100 m-small">
         <div className="container">
-            <form onSubmit={form.handleSubmit} id="contact-form" noValidate>
+            <form onSubmit={(e) => {
+                form.handleSubmit(e)
+                form.resetForm()
+            }} id="contact-form" noValidate>
                 <fieldset>
                     <legend><h2>Leave us a message for any information.</h2></legend>
                     <label htmlFor="name" className={ nameErrorText != '' ? 'error shake' : ''}>
