@@ -15,10 +15,12 @@ import NotFound from './views/NotFound'
 import AutoScrollToTop from './components/utilities/autoScrollToTop/AutoScrollToTop'
 import Header from './components/header-footer/Header'
 import Footer from './components/header-footer/Footer'
+import { ArticleProvider } from './helper/articleContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* <ArticleProvider> */}
       <Router>
         <AutoScrollToTop />
         <Header />
@@ -31,5 +33,6 @@ root.render(
         </Routes>
         <Footer />
       </Router>
+    {/* </ArticleProvider> */}
   </React.StrictMode>
 )

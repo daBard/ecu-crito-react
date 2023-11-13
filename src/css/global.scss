@@ -212,6 +212,14 @@ form {
     100% { transform: translateX(0) }
 }
 
+/* Fade away*/
+@keyframes fade-away {
+    0% { opacity: 1 }
+    66% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+
 /* MEDIA QUERIES */
 @media (max-width: 1520px) {
     /* GLOBAL */
