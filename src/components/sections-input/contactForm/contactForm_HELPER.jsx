@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 
 import Button from '../../utilities/button/Button'
+import { postContact as helper_postContact } from '../../../helper/api' // USES THE API HELPER FILE
 
 const contactForm = () => {
     const nameRegex = /^[a-zA-Z\s\-\*]+$/
@@ -11,6 +12,7 @@ const contactForm = () => {
     const [nameErrorText, setNameErrorText] = useState('')
     const [emailErrorText, setEmailErrorText] = useState('')
     const [messageErrorText, setMessageErrorText] = useState('')
+    const [buttonText, setButtonText] = useState('')
 
     let errorArray = []
 
@@ -28,8 +30,11 @@ const contactForm = () => {
             }
 
             if (!errorArray.includes(true)) {
-                postData(form.values) 
-                //form.resetForm()
+                if (await helper_postContact(form.values)) {
+                    setButtonText('User created')
+                    form.resetForm()
+                    setTimeout(() => setButtonText(''), 3500)
+                }
             }
         }
     })
@@ -41,10 +46,10 @@ const contactForm = () => {
                     setNameErrorText('Name is required')
                     errorArray.push(true)
                 }
-                else if (!nameRegex.test(form.values.name)) {
-                    setNameErrorText('Must be a valid name')
-                    errorArray.push(true)
-                }
+                // else if (!nameRegex.test(form.values.name)) {
+                //     setNameErrorText('Must be a valid name')
+                //     errorArray.push(true)
+                // }
                 break
             case 'email':
                 if (form.values.email == '') {
@@ -66,32 +71,6 @@ const contactForm = () => {
                 console.log("You're not supposed to be here... validationSwitch error")
                 errorArray.push(true)
                 break
-        }
-    }
-
-    const postData = async (values) => {
-        const result = await fetch('https://win23-assignment.azurewebsites.net/api/contactform', {
-            method: 'post',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(values)
-        })
-
-        switch(true) {
-            case (result.status >= 200 && result.status <= 299):
-                console.log(`Message posted - ${result.status}`)
-                alert('Message sent')
-                form.resetForm()
-                break
-            case (result.status >= 400 && result.status <= 499):
-                console.log(`User error - ${result.status}`)
-                break
-            case (result.status >= 500 && result.status <= 599):
-                console.log(`Server error - ${result.status}`)
-                break
-            default:
-                console.log(`Unknown error - ${result.status}`)
         }
     }
 
@@ -150,6 +129,7 @@ const contactForm = () => {
                         <div className='error-text'>{messageErrorText}</div>
                     </label>
                     <Button type="submit" form="contact-form" value="Send message" color="color" title="Send message" />
+                    <div className={buttonText != '' ? 'btn-text active' : 'btn-text'}>{buttonText}</div>
                 </fieldset>
             </form>
         </div>

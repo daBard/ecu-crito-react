@@ -15,12 +15,14 @@ import NotFound from './views/NotFound'
 import AutoScrollToTop from './components/utilities/autoScrollToTop/AutoScrollToTop'
 import Header from './components/header-footer/Header'
 import Footer from './components/header-footer/Footer'
-import { ArticleProvider } from './helper/articleContext'
+//import { ArticleProvider } from './helper/articleContext'
+import { ContactProvider } from './helper/contactContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <ArticleProvider> */}
+    <ContactProvider>
       <Router>
         <AutoScrollToTop />
         <Header />
@@ -33,6 +35,7 @@ root.render(
         </Routes>
         <Footer />
       </Router>
+    </ContactProvider>
     {/* </ArticleProvider> */}
   </React.StrictMode>
 )

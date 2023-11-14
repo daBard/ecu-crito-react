@@ -37,7 +37,6 @@ section.contact-form {
                         input::placeholder, textarea::placeholder { color: $invalid; }
                         input, textarea { 
                             border-color: $invalid;
-                            box-shadow: -1px -1px 2px inset $invalid;
                             & + .icon::after {
                                 content: "\f057";
                                 color: $invalid; 

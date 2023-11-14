@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Paperz",
+        "img": "paperz.svg",
+        "key": "logo-1"
+    },
+    {
+        "name": "Dorfus",
+        "img": "dorfus.svg",
+        "key": "logo-2"
+    },
+    {
+        "name": "Martino",
+        "img": "martino.svg",
+        "key": "logo-3"
+    },
+    {
+        "name": "Square",
+        "img": "square.svg",
+        "key": "logo-4"
+    },
+    {
+        "name": "Gobona",
+        "img": "gobona.svg",
+        "key": "logo-5"
+    }
+]

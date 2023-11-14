@@ -12,7 +12,7 @@ export async function getDataById(_id) {
     return data
 }
 
-export async function createNewUser(_user) {
+export async function postContact(_user) {
     const result = await fetch('https://win23-assignment.azurewebsites.net/api/contactform', {
         method: 'post',
         headers: {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { getData as helper_getData } from '../../../helper/api'
+import { getData as helper_getData } from '../../../helper/api' // USES THE API HELPER FILE
 
 
 const articleGrid = ({_shownArticles = 3, _maxArticles = null }) => {

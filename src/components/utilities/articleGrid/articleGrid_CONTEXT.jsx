@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useArticles } from '../../../helper/articleContext'
 
 // DOESN'T UPDATE gridArticles ON REFRESH
+// CAN'T GET useREF WORKING
 // MESSED IT UP
 
 const articleGrid = ({_shownArticles = 3, _maxArticles = null }) => { 
     const monthName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     const {articles, getArticles} = useArticles()
-    
+    const baseData = useRef(useArticles(articles))
+
     const [shownArticles, setShownArticles] = useState(_shownArticles)
     const [maxArticles, setMaxArticles] = useState(_maxArticles)
     const [gridArticles, setGridArticles] = useState([])
@@ -16,16 +18,15 @@ const articleGrid = ({_shownArticles = 3, _maxArticles = null }) => {
     const [activeDot, setActiveDot] = useState(0)
 
     useEffect(() => {
-        if (maxArticles === null || articles.length <= maxArticles) { setMaxArticles(articles.length) }
-        if (shownArticles === 0) { setShownArticles(maxArticles) }
 
-        displayArticles()
-    }, [articles.length != 0])
+        setActiveDot(0)
+         
+    }, [])
 
     useEffect(() => {
-        
+        baseData.current = articles
+        setDotElements(makeDots())
         displayArticles()
-        
     }, [activeDot])
     
     const makeDots = () => {
@@ -52,16 +53,14 @@ const articleGrid = ({_shownArticles = 3, _maxArticles = null }) => {
     }
 
     const displayArticles = async () => {
+        if (maxArticles === null || baseData.current.length <= maxArticles) { setMaxArticles(baseData.current.length) }
+        if (shownArticles === 0) { setShownArticles(maxArticles) }
 
-        
-
-        let data = await cutMaxData(articles)
+        let data = await cutMaxData(baseData.current)
         let newData = await cutData(data)
         newData = await changeDate(newData)
 
         setGridArticles(newData)
-
-        setDotElements(makeDots())
     }
 
     const cutMaxData = async (_data) => {

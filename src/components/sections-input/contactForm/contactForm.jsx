@@ -3,16 +3,19 @@ import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 
 import Button from '../../utilities/button/Button'
-import { createNewUser, createNewUser as helper_createNewUser } from '../../../helper/api'
+import { useContact } from '../../../helper/contactContext'
+
 
 const contactForm = () => {
-    const nameRegex = /^[a-zA-Z\s\-\*]+$/
+    //const nameRegex = /^[a-zA-Z\s\-\*]+$/ //I DON't JUDGE
     const emailRegex = new RegExp(/(([^<>()\[\]\\.,:\s@"]+(\.[^<>()\[\]\\.,:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/)
     
     const [nameErrorText, setNameErrorText] = useState('')
     const [emailErrorText, setEmailErrorText] = useState('')
     const [messageErrorText, setMessageErrorText] = useState('')
     const [buttonText, setButtonText] = useState('')
+
+    const {postContact} = useContact() // USES CONTEXT
 
     let errorArray = []
 
@@ -30,7 +33,7 @@ const contactForm = () => {
             }
 
             if (!errorArray.includes(true)) {
-                if (await createNewUser(form.values)) {
+                if (await postContact(form.values)) {
                     setButtonText('User created')
                     form.resetForm()
                     setTimeout(() => setButtonText(''), 3500)
@@ -46,10 +49,11 @@ const contactForm = () => {
                     setNameErrorText('Name is required')
                     errorArray.push(true)
                 }
-                else if (!nameRegex.test(form.values.name)) {
-                    setNameErrorText('Must be a valid name')
-                    errorArray.push(true)
-                }
+                // I DON'T JUDGE
+                // else if (!nameRegex.test(form.values.name)) {
+                //     setNameErrorText('Must be a valid name')
+                //     errorArray.push(true)
+                // }
                 break
             case 'email':
                 if (form.values.email == '') {
