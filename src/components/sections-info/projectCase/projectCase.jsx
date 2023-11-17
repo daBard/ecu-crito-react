@@ -5,13 +5,18 @@ import adeoluEletu from '../../../assets/img/adeolu-eletu-E7RLgUjjazc-unsplash.j
 import marekLevak from '../../../assets/img/marek-levak-zANXcXyByos-unsplash.jpg'
 import oliDale from '../../../assets/img/oli-dale-xjSkI_seiZY-unsplash.jpg'
 import carlosMuza from '../../../assets/img/carlos-muza-hpjSkU2UYSU-unsplash.jpg'
+import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
 
 const projectCase = () => {
+    const highlight = 'Project & case studies'
+    const title = "Let's looks our global projects"
+    
   return (
     <section className="project-case w-100">
         <div className="container d-flex flex-column align-items-center">
-            <p className="highlight">Project & case studies</p>
-            <h2 className="display-3">Let's looks our global projects</h2>
+            <HighlightHeading
+                _highlight={highlight} _title={title}
+            />
             <div className="objects">
                 <Link to="#" className="object">
                     <img src={adeoluEletu} alt="" loading="lazy" />

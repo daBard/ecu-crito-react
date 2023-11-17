@@ -2,13 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import backgroundLinesRight from '../../../assets/img/background-lines-right.svg'
+import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
 
 const service = () => {
+    const highlight = 'Our Services'
+    const title = 'We provide the best services for consulting'
+
   return (
     <section className="service w-100">
         <div className="container d-flex flex-column">
-            <p className="highlight">Our Services</p>
-            <h2 className="display-3">We provide the best services for consulting</h2>
+            <HighlightHeading
+                _highlight={highlight} _title={title}
+            />
             <div className="cards d-flex">
                 <Link to="#" className="card d-flex flex-column">
                     <div className="line"></div>

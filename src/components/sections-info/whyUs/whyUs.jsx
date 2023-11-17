@@ -2,15 +2,20 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import amyHirshi from '../../../assets/img/amy-hirschi-K0c8ko3e6AA-unsplash.jpg'
+import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
 
 const whyUs = () => {
+    const highlight = 'Why choose us'
+    const title = 'Why we are the best business consulting agent'
+
   return (
     <section className="why-us w-100 m-small">
         <div className="box"></div>
         <div className="container d-flex">
             <div className="left">
-                <p className="highlight">Why choose us</p>
-                <h2 className="display-3">Why we are the best business consulting agent</h2>
+                <HighlightHeading
+                    _highlight={highlight} _title={title}
+                />
                 <div className="objects">
                     <Link to="#" className="object d-flex">
                     <div className="icon"><i className="fa-light fa-thumbs-up fa-2xl"></i></div>

@@ -69,19 +69,19 @@ section.contact-form {
                 }
 
                 .btn-text {
-                    display: inline;
-                    width: 100%;
+                    display: block;
+                    align-self: flex-start;
                     height: .8rem;
-                    text-align: right;
                     padding-right: 1rem;
                     margin-top: .2rem;
                     color: $valid;  
                     font-size: .8rem;
                     font-weight: 600;
+                    text-wrap: nowrap;
 
                     &.active {
-                        animation-name: fade-away;
-                        animation-duration: 3s; 
+                        animation-name: message-sent-btn-text;
+                        animation-duration: 5s; 
                         animation-timing-function: ease-in-out;
                         animation-iteration-count: 1;
                         animation-fill-mode: forwards;

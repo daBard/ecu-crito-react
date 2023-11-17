@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
-import { getDataById as helper_getDataById } from '../../../helper/api'
+import { getDataById as helper_getDataById, getData as helper_getData} from '../../../helper/api'
+import { object } from 'yup'
 
 const articleNews = () => {
     const [article, setArticle] = useState({})
+    const [recentPosts, setRecentPosts] = useState([{}])
 
     const {id} = useParams()
     const monthName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
     useEffect(() => {
+        displayRecentPosts()
+    }, [])
+    
+    useEffect(() => {
         displayArticle()
     }, [id])
-
 
     const displayArticle = async () => {
         const data = await helper_getDataById(id)
@@ -22,9 +27,20 @@ const articleNews = () => {
         setArticle(newData)
     }
 
+    const displayRecentPosts = async () => {
+        const data = await helper_getData()
+        
+        let newData = await data.slice(0, 3)
+       
+        newData = await changeDates(newData)
+    
+        setRecentPosts(newData)
+    }
+
+
     const changeDate = async (_data) =>  {
         let newData = await _data
-
+    
         let date = _data.published.split('T', '1').toString().split('-')
 
         newData.year = date[0]
@@ -32,6 +48,22 @@ const articleNews = () => {
         newData.month = monthName[date[1] - 1]
 
         newData.day = Number(date[2])
+
+        return (newData)
+    }
+
+    const changeDates = async (_data) =>  {
+        let newData = await _data
+
+        for (const [i, item] of _data.entries()) {
+            let date = item.published.split('T', '1').toString().split('-')
+
+            newData[i].year = Number(date[0])
+
+            newData[i].month = monthName[date[1] - 1]
+
+            newData[i].day = Number(date[2])
+        }
 
         return (newData)
     }
@@ -70,20 +102,15 @@ const articleNews = () => {
                     <div className='recent-posts'>
                         <h3>Recent posts</h3>
                         <div>
-                            <div>
-                                <h4>This is a text</h4>
-                                <p>MMM, DD, YYYY</p>
+                            {recentPosts.map((post, i) => (
+                            <div key={post.id}>
+                                <Link  to={`/news/details/${post.id}`}>
+                                    <h4>{post.title}</h4>
+                                    <p>{post.month}, {post.day}, {post.year}</p>
+                                </Link>
+                                { i <= (recentPosts.length - 2) ? <div className='line'></div> : '' }
                             </div>
-                            <div className='line'></div>
-                            <div>
-                                <h4>This is a text</h4>
-                                <p>MMM, DD, YYYY</p>
-                            </div>
-                            <div className='line'></div>
-                            <div>
-                                <h4>This is a text</h4>
-                                <p>MMM, DD, YYYY</p>
-                            </div>
+                            ))}
                         </div>
                     </div>
                     <div className='categories'>

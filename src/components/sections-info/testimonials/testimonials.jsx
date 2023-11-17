@@ -4,13 +4,18 @@ import { Link } from 'react-router-dom'
 import cassandraWarren from '../../../assets/img/vince-veras-AJIqZDAUD7A-unsplash.jpg'
 import amandaTulling from '../../../assets/img/christina-wocintechchat-com-PlikkWB79qs-unsplash.jpg'
 import jackMcDogglas from '../../../assets/img/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg'
+import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
 
 const testimonials = () => {
+    const highlight = 'Testimonial'
+    const title = 'What our client says'
+
   return (
     <section className="testimonials w-100">
         <div className="container d-flex flex-column">
-            <p className="highlight">Testimonial</p>
-            <h2 className="display-3">What our client says</h2>
+            <HighlightHeading
+                _highlight={highlight} _title={title}
+            />
             <div className="cards d-flex">
                 <div className="card">
                     <div className="stars highlight">★★★★★</div>

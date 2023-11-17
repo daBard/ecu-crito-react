@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
 
 const members = [
     {
@@ -46,7 +47,10 @@ const members = [
 
 const team = () => {
 
+    const highlight = 'Meet our team'
+    const title = 'Experience team members'
     const shownMembers = 4
+
     const [displayedMembers, setDisplayedMembers] = useState([])
     const [dotElements, setDotElements] = useState([])
     const [activeDot, setActiveDot] = useState()
@@ -105,8 +109,9 @@ const team = () => {
         <div className="container d-flex flex-column">
             <div className="top d-flex justify-content-between align-items-center">
                 <div className="text">
-                    <p className="highlight">Meet our team</p>
-                    <h2 className="display-3">Experience team members</h2>
+                    <HighlightHeading
+                        _highlight={highlight} _title={title}
+                    />
                 </div>
                 <div className="btngroup">
                     <Link to="#" className="btn btn-c">Browse team</Link>

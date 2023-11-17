@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ArticleGrid from '../../utilities/articleGrid/ArticleGrid'
+import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
 
 const feedNews = ({ _bgColor= '$bg-white' }) => {
 
+    const highlight = 'Articles & news'
+    const title = 'Get every single article & news'
     const shownArticles = 3
     const maxArticles = 12
 
@@ -12,8 +15,9 @@ const feedNews = ({ _bgColor= '$bg-white' }) => {
             <div className="container">
                 <div className="top d-flex">
                     <div className="text">
-                        <p className="highlight">Articles & news</p>
-                        <h2 className="display-3">Get every single article & news</h2>
+                        <HighlightHeading
+                            _highlight={highlight} _title={title}
+                        />
                     </div>
                     <div className="btngroup">
                         <Link to="/news" className="btn btn-w">Browse articles</Link>

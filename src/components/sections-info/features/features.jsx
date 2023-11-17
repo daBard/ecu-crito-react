@@ -1,6 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
+
+const highlight = 'Features'
+const title = 'Our accounting is trusted by thousands of companies'
+const display = 4
+
 const features = () => {
   return (
     <section className="features w-100 m-none">
@@ -8,8 +14,9 @@ const features = () => {
             <div className="box row">
                 <div className="col">
                     <div className="left">
-                        <p className="highlight">Features</p>
-                        <h2 className="heading display-4">Our Accounting is trusted by thousands of companies</h2>
+                        <HighlightHeading 
+                            _highlight={highlight} _title={title} _display={display}
+                        />
                         <Link to="#" className="btn btn-c">Learn more</Link>
                     </div>
                 </div>

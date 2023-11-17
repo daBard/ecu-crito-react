@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom'
 
 import dariaPimkina from '../../../assets/img/daria-pimkina-tYaccl19A3Q-unsplash.jpg'
 import bgWavyLines from '../../../assets/img/background-wavy-lines2.svg'
+import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
 
 const about = () => {
-  return (
+    const highlight = 'About company'
+    const title = 'We are business consulting & credit repair experts'
+
+    return (
     <section className="about w-100">
         <div className="container">
             <div className="row">
@@ -20,8 +24,9 @@ const about = () => {
                     </div>
                 </div>
                 <div className="col-lg right d-flex flex-column justify-content-between">
-                    <p className="highlight">About company</p>
-                    <h2 className="display-3">We are business consulting & credit repair experts</h2>
+                    <HighlightHeading
+                        _highlight={highlight} _title={title}
+                    />
                     <div className="text">
                         <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam officiis quas assumenda esse obcaecati? Ex esse error voluptates iure vel totam eos.</p>
                         <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis esse quis incidunt adipisci accusantium libero provident voluptate amet.</p>
