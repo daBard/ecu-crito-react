@@ -1,36 +1,36 @@
 import React from 'react'
 
-// import paperz from '../../../assets/img/paperz.svg'
-// import dorfus from '../../../assets/img/dorfus.svg'
-// import martino from '../../../assets/img/martino.svg'
-// import square from '../../../assets/img/square.svg'
-// import gobona from '../../../assets/img/gobona.svg'
+import paperz from '../../../assets/img/paperz.svg'
+import dorfus from '../../../assets/img/dorfus.svg'
+import martino from '../../../assets/img/martino.svg'
+import square from '../../../assets/img/square.svg'
+import gobona from '../../../assets/img/gobona.svg'
 
 const logoBar = () => {
   const logos =  [
     {
       name: "Paperz",
-      img: "paperz.svg",
+      img: paperz,
       key: "logo-1"
     },
     {
         name: "Dorfus",
-        img: "dorfus.svg",
+        img: dorfus,
         key: "logo-2"
     },
     {
         name: "Martino",
-        img: "martino.svg",
+        img: martino,
         key: "logo-3"
     },
     {
         name: "Square",
-        img: "square.svg",
+        img: square,
         key: "logo-4"
     },
     {
         name: "Gobona",
-        img: "gobona.svg",
+        img: gobona,
         key: "logo-5"
     }
   ]
@@ -40,7 +40,7 @@ const logoBar = () => {
         <div className="container">
             <div className="logos d-flex align-items-center">
               {logos.map(logo => (
-                <a key={logo.key} href="#"><img src={`./src/assets/img/${logo.img}`} alt={`${logo.name} logo`} loading="lazy" /></a>
+                <a key={logo.key} href="#"><img src={logo.img} alt={`${logo.name} logo`} loading="lazy" /></a>
               ))}
                 {/* <a href="#"><img src={paperz} alt="Paperz logo" loading="lazy" /></a>
                 <a href="#"><img src={dorfus} alt="Dorfus logo" loading="lazy" /></a>

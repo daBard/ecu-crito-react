@@ -2,46 +2,51 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import HighlightHeading from '../../utilities/highlightHeading/HighlightHeading'
 
+import kristinePalmer from '../../../assets/img/christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg'
+import markAubri from '../../../assets/img/itay-verchik-6ZKGBzrDd3I-unsplash.jpg'
+import kimberlyHansen from '../../../assets/img/christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg'
+import justinWilloman from '../../../assets/img/the-connected-narrative-N8lRH2uxih4-unsplash.jpg'
+
 const members = [
     {
         name: "Kristine Palmer",
         position: "Chief Operation Officer",
-        img: "christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg"
+        img: kristinePalmer
     },
     {
         name: "Mark Aubri",
         position: "Senior Consultant",
-        img: "itay-verchik-6ZKGBzrDd3I-unsplash.jpg"
+        img: markAubri
     },
     {
         name: "Kimberly Hansen",
         position: "Senior Consultant",
-        img: "christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg"
+        img: kimberlyHansen
     },
     {
         name: "Justin Willoman",
         position: "Senior Tech Consultant",
-        img: "the-connected-narrative-N8lRH2uxih4-unsplash.jpg"
+        img: justinWilloman
     },
     {
         name: "Kimberly Hansen",
         position: "Senior Consultant",
-        img: "christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg"
+        img: kimberlyHansen
     },
     {
         name: "Justin Willoman",
         position: "Senior Tech Consultant",
-        img: "the-connected-narrative-N8lRH2uxih4-unsplash.jpg"
+        img: justinWilloman
     },
     {
         name: "Kristine Palmer",
         position: "Chief Operation Officer",
-        img: "christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg"
+        img: kristinePalmer
     },
     {
         name: "Mark Aubri",
         position: "Senior Consultant",
-        img: "itay-verchik-6ZKGBzrDd3I-unsplash.jpg"
+        img: markAubri
     }
 ]
 
@@ -120,7 +125,7 @@ const team = () => {
             <div className="cards d-flex">
                 {displayedMembers.map((member, index) => (
                     <div key={`team-${index}`} className="card d-flex flex-column">
-                        <img src={`./src/assets/img/${member.img}`} alt={member.name} loading="lazy" />
+                        <img src={member.img} alt={member.name} loading="lazy" />
                         <div className="text">
                             <h3>{member.name}</h3>
                             <p>{member.position}</p>
