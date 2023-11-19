@@ -13,7 +13,7 @@ const contactForm = () => {
     const [nameErrorText, setNameErrorText] = useState('')
     const [emailErrorText, setEmailErrorText] = useState('')
     const [messageErrorText, setMessageErrorText] = useState('')
-    const [buttonText, setButtonText] = useState('Message sent')
+    const [buttonText, setButtonText] = useState('')
 
     const {postContact} = useContact() // USES CONTEXT
 
@@ -34,7 +34,7 @@ const contactForm = () => {
 
             if (!errorArray.includes(true)) {
                 if (await postContact(form.values)) {
-                    setButtonText('Messaged sent')
+                    setButtonText('Message sent')
                     form.resetForm()
                     setTimeout(() => setButtonText(''), 3500)
                 }
